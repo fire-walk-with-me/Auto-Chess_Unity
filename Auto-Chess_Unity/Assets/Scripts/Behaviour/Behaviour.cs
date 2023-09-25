@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Behaviour : MonoBehaviour
+//This script is the abstract class that the different behaviours inherit from
+
+public abstract class Behaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] protected Competitor competitor;
+    protected GameObject thisUnit;
+
+    private void Awake()
     {
-        
+        competitor = FindObjectOfType<Competitor>().GetComponent<Competitor>();
+        thisUnit = gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public virtual void DoAction() { }
 }

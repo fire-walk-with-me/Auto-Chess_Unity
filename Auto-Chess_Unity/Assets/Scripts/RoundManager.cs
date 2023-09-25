@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Player player;
+    Competitor competitor;
+    GameManager gameManager;
+
+    int round;
+    float Timer;
+
     void Start()
+    {
+        player = GetComponent<Player>();
+        competitor = GetComponent<Competitor>();
+        gameManager = GetComponent<GameManager>();
+    }
+
+    
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void GiveGold()
     {
-        
+        int gold = 2;
+
+        //add bonuses or interest
+
+        player.IncreaseGold(gold);
     }
 }

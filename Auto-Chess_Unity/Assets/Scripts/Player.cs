@@ -12,5 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField] float health;
 
 
-
+    public void IncreaseGold(int gold)
+    {
+        currency += gold;
+    }
 }

@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public abstract class Unit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected Stats stats;
+    [SerializeField] protected Ability ability;
+    protected AI ai;
+    [SerializeField] protected bool isDead;
+    [SerializeField] protected GameObject target;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] protected float mana;
+    [SerializeField] protected float health;
+
+    public void SetTarget(GameObject target)
     {
-        
+        this.target = target;
     }
+    public GameObject GetTarget()
+    {
+        return target;
+    }
+    public bool IsDead() => isDead;
+    public Stats Stats() => stats;
+    public float Health() => health;
+    public float Mana() => mana;
 }

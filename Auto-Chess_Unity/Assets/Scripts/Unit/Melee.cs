@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Melee : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+//This script inherits from Unit. It decides that a unit has the melee fighting style
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class Melee : Unit
+{
+
 }
