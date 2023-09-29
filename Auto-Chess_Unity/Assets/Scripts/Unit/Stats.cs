@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    float maxHealth;
-    float maxMana;
-    float manaRegen;
-    float attack;
-    float attackSpeed;
-    float attackDistance;
-    float defence;
+    [SerializeField]float maxHealth;
+    [SerializeField] float maxMana;
+    [SerializeField] float manaRegen;
+    [SerializeField] float attack;
+    [SerializeField] float attackSpeed;
+    [SerializeField] float attackDistance;
+    [SerializeField] float defence;
 
     public float GetStat(string stat)
     {

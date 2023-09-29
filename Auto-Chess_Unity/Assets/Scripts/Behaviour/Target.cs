@@ -4,14 +4,19 @@ using UnityEngine;
 
 //this script will find the closest enemy to the unit who uses this behaviour
 
-public class Target : Behaviour
+public class Target : AIBehaviour
 {
     [SerializeField] GameObject target;
-    
+    [SerializeField] bool belongsToPlayer;
+    [SerializeField] List<GameObject> targetList = new List<GameObject>();
+    [SerializeField] GameObject closestTarget;
+    private void Start()
+    {
+        if(gameObject.tag == "Player") belongsToPlayer = true;
+    }
+
     public override void DoAction()
     {
-        if (competitor.getActiveCharacterAmount() <= 0) return;
-
         target = getClosestEnemy();
 
         targetEnemy();
@@ -19,10 +24,18 @@ public class Target : Behaviour
 
     private GameObject getClosestEnemy()
     {
-        List<GameObject> list = competitor.getEnemyCharacters();
-        GameObject closestTarget = list[0];
+        
+        if (belongsToPlayer)
+        {
+            targetList = competitor.GetCharacters();
+        }
+        else
+        {
+            targetList = player.GetCharacters();
+        }
+        closestTarget = targetList[0];
 
-        foreach(GameObject enemy in list)
+        foreach(GameObject enemy in targetList)
         {
             if(Vector3.Distance(thisUnit.transform.position, enemy.transform.position) <= Vector3.Distance(thisUnit.transform.position, closestTarget.transform.position))
                 closestTarget = enemy;
@@ -31,6 +44,6 @@ public class Target : Behaviour
     }
     public void targetEnemy()
     {
-        thisUnit.GetComponent<Unit>().SetTarget(target);
+        thisUnit.SetTarget(target);
     }
 }

@@ -6,12 +6,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    RoundManager roundManager;
-    Player player;
+    [SerializeField] RoundManager roundManager;
 
-    private void Awake()
-    {
-        roundManager = GetComponent<RoundManager>();
-        player = GetComponent<Player>();
-    }
+    //private void Awake()
+    //{
+    //    roundManager = GetComponent<RoundManager>();
+    //}
 }

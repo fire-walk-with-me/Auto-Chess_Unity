@@ -4,16 +4,19 @@ using UnityEngine;
 
 //This script holds information about the human player
 
-public class Player : MonoBehaviour
+public abstract class Player : MonoBehaviour
 {
-    [SerializeField] int currency;
     [SerializeField] int characterLimit;
-    [SerializeField] int activeCharacters;
     [SerializeField] float health;
+    [SerializeField] List<GameObject> ActiveCharacters;
 
-
-    public void IncreaseGold(int gold)
+    public int getActiveCharacterAmount()
     {
-        currency += gold;
+        return ActiveCharacters.Count;
+    }
+
+    public List<GameObject> GetCharacters()
+    {
+        return ActiveCharacters;
     }
 }

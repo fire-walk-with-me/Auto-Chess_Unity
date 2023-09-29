@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
-    Player player;
-    Competitor competitor;
-    GameManager gameManager;
+    [SerializeField] PlayerHuman playerHuman;
+    [SerializeField] PlayerAI competitor;
+    [SerializeField] GameManager gameManager;
 
-    int round;
-    float Timer;
+    [SerializeField] int round;
+    [SerializeField] float Timer;
 
     void Start()
     {
-        player = GetComponent<Player>();
-        competitor = GetComponent<Competitor>();
+        playerHuman = GetComponent<PlayerHuman>();
+        competitor = GetComponent<PlayerAI>();
         gameManager = GetComponent<GameManager>();
     }
 
@@ -30,6 +30,6 @@ public class RoundManager : MonoBehaviour
 
         //add bonuses or interest
 
-        player.IncreaseGold(gold);
+        playerHuman.IncreaseGold(gold);
     }
 }
