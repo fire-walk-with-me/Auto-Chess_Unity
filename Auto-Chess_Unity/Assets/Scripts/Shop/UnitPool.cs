@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class UnitPool : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] List<Unit> eachUniqueUnit;
 
-    // Update is called once per frame
-    void Update()
+    public Unit GetRandomUnit()
     {
-        
+        return eachUniqueUnit[Random.Range(0, eachUniqueUnit.Count)];
     }
 }

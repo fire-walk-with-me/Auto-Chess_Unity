@@ -10,4 +10,9 @@ public class PlayerHuman : Player
     {
         currency += gold;
     }
+
+    public int GetGoldCount()
+    {
+        return currency;
+    }
 }

@@ -33,8 +33,7 @@ public class Attack : AIBehaviour
 
     private IEnumerator AttackEnemy()
     {
-        yield return new WaitForSeconds(attackSpeed);
-
         Debug.Log(gameObject + " attacks for " + attackDamage + " Dmg");
+        yield return null;
     }
 }

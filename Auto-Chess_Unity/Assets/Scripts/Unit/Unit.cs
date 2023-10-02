@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
+    [SerializeField] private string unitName;
     protected Stats stats;
     [SerializeField] protected Ability ability;
     protected AI ai;
@@ -16,7 +17,7 @@ public abstract class Unit : MonoBehaviour
 
     void Start()
     {
-        stats= GetComponent<Stats>();
+        stats = GetComponent<Stats>();
         health = stats.GetStat("maxHealth");
         mana = stats.GetStat("maxMana");
     }
@@ -29,7 +30,7 @@ public abstract class Unit : MonoBehaviour
         }
 
         RegenrateMana();
-        
+
     }
 
     public void SetTarget(GameObject target)
@@ -48,6 +49,7 @@ public abstract class Unit : MonoBehaviour
     public Stats Stats() => stats;
     public float Health() => health;
     public float Mana() => mana;
+    public string UnitName() => unitName;
 
     public void TakeDamage(float damage)
     {
@@ -61,6 +63,6 @@ public abstract class Unit : MonoBehaviour
 
     private void RegenrateMana()
     {
-        mana += stats.GetStat("manaRegen") * Time.deltaTime;
+        mana += (stats.GetStat("manaRegen") * Time.deltaTime) / 5;
     }
 }
