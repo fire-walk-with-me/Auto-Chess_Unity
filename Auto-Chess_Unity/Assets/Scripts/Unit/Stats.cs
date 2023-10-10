@@ -12,6 +12,11 @@ public class Stats : MonoBehaviour
     [SerializeField] float attackDistance;
     [SerializeField] float defence;
 
+    private void Start()
+    {
+        RandomizeStats();
+    }
+
     public float GetStat(string stat)
     {
         if (stat == "maxHealth") return maxHealth;
@@ -22,5 +27,31 @@ public class Stats : MonoBehaviour
         if (stat == "attackDistance") return attackDistance;
         if (stat == "defence") return defence;
         else return 0;
+    }
+
+    private void RandomizeStats()
+    {
+        //Add a way that rarity affect stats
+
+        if (true)//Melee
+        {
+            maxHealth = Random.Range(20,31);
+            maxMana = Random.Range(10,16);
+            manaRegen = Random.Range(2,8);
+            attack = Random.Range(5,8);
+            attackSpeed = Random.Range(2,5);
+            attackDistance = Random.Range(1,1.5f);
+            defence = Random.Range(1,4);
+        }
+        if (true)//Range
+        {
+            maxHealth = Random.Range(15, 21);
+            maxMana = Random.Range(10, 16);
+            manaRegen = Random.Range(2, 8);
+            attack = Random.Range(4, 7);
+            attackSpeed = Random.Range(3, 6);
+            attackDistance = Random.Range(5, 7);
+            defence = Random.Range(1, 3);
+        }
     }
 }

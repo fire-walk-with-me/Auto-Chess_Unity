@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class UnitPlacer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] List<PlacementNode> placementNodes = new List<PlacementNode>();
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
         
     }

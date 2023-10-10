@@ -7,12 +7,14 @@ public class Attack : AIBehaviour
 {
     [SerializeField] float attackSpeed;
     [SerializeField] float attackDamage;
+    float attackTime = 10;
     float timer;
 
     private void Start()
     {
         attackDamage = gameObject.GetComponent<Stats>().GetStat("attack");
         attackSpeed = gameObject.GetComponent<Stats>().GetStat("attackSpeed");
+        attackTime -= attackSpeed;
     }
 
     public override void DoAction()
@@ -20,7 +22,7 @@ public class Attack : AIBehaviour
         if (timer <= 0) 
         {
             StartCoroutine(AttackEnemy());
-            timer = attackSpeed;
+            timer = attackTime;
         }
 
         if (thisUnit.GetTarget().GetComponent<Unit>().IsDead())

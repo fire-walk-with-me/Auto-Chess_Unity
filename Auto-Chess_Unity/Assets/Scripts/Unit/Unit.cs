@@ -15,6 +15,13 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected float mana;
     [SerializeField] protected float health;
 
+    enum Rarity
+    {
+        common,
+        rare,
+        legendary
+    }
+
     void Start()
     {
         stats = GetComponent<Stats>();
@@ -53,7 +60,7 @@ public abstract class Unit : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= damage;
+        health -= (damage - stats.GetStat("defence"));
     }
 
     public void TakeMana()
