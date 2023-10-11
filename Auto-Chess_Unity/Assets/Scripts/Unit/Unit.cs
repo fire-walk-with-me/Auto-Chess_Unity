@@ -19,7 +19,7 @@ public abstract class Unit : MonoBehaviour
     {
         common,
         rare,
-        legendary
+        epic
     }
 
     void Start()
@@ -37,7 +37,6 @@ public abstract class Unit : MonoBehaviour
         }
 
         RegenrateMana();
-
     }
 
     public void SetTarget(GameObject target)
@@ -70,6 +69,7 @@ public abstract class Unit : MonoBehaviour
 
     private void RegenrateMana()
     {
+        if(mana < stats.GetStat("maxMana"))
         mana += (stats.GetStat("manaRegen") * Time.deltaTime) / 5;
     }
 }

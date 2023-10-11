@@ -22,6 +22,7 @@ public class AI : MonoBehaviour
     private void Update()
     {
         SimpleDecisionTree();
+        if(!unit.IsDead()) activeBehaviour.DoAction(); //called each frame for every bot that is alive. Change the active behaviour through an AI-model
     }
     public AIBehaviour GetActiveBehaviour()
     {
@@ -35,20 +36,18 @@ public class AI : MonoBehaviour
 
     public void SimpleDecisionTree()
     { 
-        if (!unit.GetTarget() || deadTarget()) activeBehaviour = gameObject.GetComponent<Target>();
+        if (!unit.GetTarget() || deadTarget()) setActiveBehaviour(gameObject.GetComponent<Target>());
 
         else if(Vector3.Distance(gameObject.transform.position, unit.GetTarget().transform.position) - 0.2f > unit.Stats().GetStat("attackDistance"))
-            activeBehaviour = gameObject.GetComponent<Move>();
+            setActiveBehaviour(gameObject.GetComponent<Move>());
 
         else if(Vector3.Distance(gameObject.transform.position, unit.GetTarget().transform.position) <= unit.Stats().GetStat("attackDistance") && 
             unit.Mana() >= unit.Stats().GetStat("maxMana"))
-            activeBehaviour = gameObject.GetComponent<UseAbility>();
+            setActiveBehaviour(gameObject.GetComponent<UseAbility>());
 
         else if(Vector3.Distance(gameObject.transform.position, unit.GetTarget().transform.position) <= unit.Stats().GetStat("attackDistance") &&
             unit.Mana() < unit.Stats().GetStat("maxMana")) 
-            activeBehaviour = gameObject.GetComponent<Attack>();
-
-        activeBehaviour.DoAction();
+            setActiveBehaviour(gameObject.GetComponent<Attack>());
     }
 
     private bool deadTarget()
