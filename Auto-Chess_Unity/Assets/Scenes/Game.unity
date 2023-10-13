@@ -2553,7 +2553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4424b6fb804e67049a85c4eab6541c7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopUI: {fileID: 0}
+  shopUI: {fileID: 1799748440}
+  pool: {fileID: 1553080947}
 --- !u!4 &1553080949
 Transform:
   m_ObjectHideFlags: 0
@@ -3007,6 +3008,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783338693}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1799748440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3129424297954506997, guid: 3658e4bbc29763f4e93ef376b381e1a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6064082583048281832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842c5d347ed20dc4d948c051a35cb54b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1953965947
 GameObject:
   m_ObjectHideFlags: 0
@@ -3440,9 +3453,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4916304726979953691, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
         type: 3}
+      propertyPath: shop
+      value: 
+      objectReference: {fileID: 1553080948}
+    - target: {fileID: 4916304726979953691, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
+        type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1587810241}
+    - target: {fileID: 4916304726979953691, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
+        type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 1799748440}
     - target: {fileID: 4916304726979953691, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
         type: 3}
       propertyPath: competitor
