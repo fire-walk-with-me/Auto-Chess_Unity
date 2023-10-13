@@ -11,13 +11,14 @@ public class RoundManager : MonoBehaviour
     [SerializeField] int round;
     [SerializeField] float Timer;
 
+    private bool activeRound;
+
     void Start()
     {
         playerHuman = GetComponent<PlayerHuman>();
         competitor = GetComponent<PlayerAI>();
         gameManager = GetComponent<GameManager>();
     }
-
     
     void Update()
     {
@@ -32,4 +33,6 @@ public class RoundManager : MonoBehaviour
 
         playerHuman.IncreaseGold(gold);
     }
+
+    public bool ActiveRound() => activeRound;
 }

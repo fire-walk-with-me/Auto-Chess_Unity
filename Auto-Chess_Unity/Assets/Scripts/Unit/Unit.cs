@@ -33,7 +33,7 @@ public abstract class Unit : MonoBehaviour
     {
         if (health <= 0)
         {
-            isDead = true;
+            SetDead();
         }
 
         RegenrateMana();
@@ -69,7 +69,19 @@ public abstract class Unit : MonoBehaviour
 
     private void RegenrateMana()
     {
-        if(mana < stats.GetStat("maxMana"))
-        mana += (stats.GetStat("manaRegen") * Time.deltaTime) / 5;
+        if (mana < stats.GetStat("maxMana"))
+            mana += (stats.GetStat("manaRegen") * Time.deltaTime) / 5;
+    }
+
+    private void SetDead()
+    {
+        isDead = true;
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+    }
+
+    private void SetAlive()
+    {
+        isDead = false;
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 }

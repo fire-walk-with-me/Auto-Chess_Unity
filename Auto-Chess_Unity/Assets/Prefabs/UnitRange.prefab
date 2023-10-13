@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 9041893784549831030}
   m_Layer: 0
   m_Name: UnitRange
-  m_TagString: Competitor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
