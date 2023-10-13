@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class RoundManager : MonoBehaviour
@@ -9,20 +10,24 @@ public class RoundManager : MonoBehaviour
     [SerializeField] GameManager gameManager;
 
     [SerializeField] int round;
-    [SerializeField] float Timer;
+    [SerializeField] float timer;
+    [SerializeField] TMP_Text timerText;
+    [SerializeField] UIManager uiManager;
+    [SerializeField] UnitShop shop;
 
     private bool activeRound;
 
     void Start()
     {
-        playerHuman = GetComponent<PlayerHuman>();
-        competitor = GetComponent<PlayerAI>();
-        gameManager = GetComponent<GameManager>();
+        round = 0;
+
+        StartCoroutine(Round());
     }
-    
+
     void Update()
     {
-        
+        timer -= Time.deltaTime;
+        timerText.text = timer.ToString("0");
     }
 
     private void GiveGold()
@@ -32,7 +37,45 @@ public class RoundManager : MonoBehaviour
         //add bonuses or interest
 
         playerHuman.IncreaseGold(gold);
+
+        uiManager.UpdateCurrencyText();
     }
 
     public bool ActiveRound() => activeRound;
+
+    private IEnumerator Round()
+    {
+        shop.UpdateShop();
+        timer = 2;
+        timerText.color = Color.blue;
+        yield return new WaitForSeconds(timer);
+
+        timer = 2;
+        timerText.color = Color.red;
+        activeRound = true;
+
+        yield return new WaitForSeconds(timer);
+
+        activeRound = false;
+        CheckWinner();
+        ResetGame();
+        round++;
+        //yield return new WaitForSeconds(1);
+
+        StartCoroutine(Round());
+    }
+
+    private void CheckWinner()
+    {
+        //if one both teams still alive, check who has most champs left or something
+
+        //if(winner) giveExtragold
+
+        GiveGold();
+    }
+
+    private void ResetGame()
+    {
+        //turn all champs alive and move them to startPos
+    }
 }

@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
 
         for (int i = 0; i < buttonList.Count; ++i)
         {
-            buttonList[i].GetComponentInChildren<Text>().text = unitsInStoreList[i].UnitName();
+            buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].UnitName();
         }
     }
 }

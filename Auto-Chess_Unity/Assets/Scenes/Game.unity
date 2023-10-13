@@ -247,18 +247,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46310321}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &153186070 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6969806871615982714, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 6064082583048281832}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &365850707
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 365850707}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 3.06}
+  m_LocalPosition: {x: -5.4, y: 1.1, z: 4.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1820,18 +1808,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &1123586764 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2230274481792973383, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 6064082583048281832}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1129828742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2717,6 +2693,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1570166945}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1587810241 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 726808652591690009, guid: 3658e4bbc29763f4e93ef376b381e1a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6064082583048281832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1619485264 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1910760081997757261, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
@@ -3450,6 +3438,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4916304726979953691, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
+        type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 1587810241}
+    - target: {fileID: 4916304726979953691, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
+        type: 3}
+      propertyPath: competitor
+      value: 
+      objectReference: {fileID: 1757213189}
+    - target: {fileID: 4916304726979953691, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
+        type: 3}
+      propertyPath: playerHuman
+      value: 
+      objectReference: {fileID: 1953965950}
     - target: {fileID: 6512094684703999738, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
         type: 3}
       propertyPath: m_Name
@@ -3523,10 +3526,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitRange
       objectReference: {fileID: 0}
+    - target: {fileID: 1910760081997757261, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Competitor
+      objectReference: {fileID: 0}
     - target: {fileID: 9045363183477644425, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 15.24
       objectReference: {fileID: 0}
     - target: {fileID: 9045363183477644425, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
         type: 3}
@@ -3536,7 +3544,7 @@ PrefabInstance:
     - target: {fileID: 9045363183477644425, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.16
+      value: -4.76
       objectReference: {fileID: 0}
     - target: {fileID: 9045363183477644425, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
         type: 3}
@@ -3586,51 +3594,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2230274481792973383, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2230274481792973383, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3129424297954506997, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: infoBarText
-      value: 
-      objectReference: {fileID: 1123586764}
-    - target: {fileID: 3129424297954506997, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: currencyText
-      value: 
-      objectReference: {fileID: 153186070}
-    - target: {fileID: 6469198789485973465, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469198789485973465, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469198789485973465, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469198789485973465, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469198789485973465, guid: 3658e4bbc29763f4e93ef376b381e1a8,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7735625610120215452, guid: 3658e4bbc29763f4e93ef376b381e1a8,
         type: 3}
       propertyPath: m_Pivot.x

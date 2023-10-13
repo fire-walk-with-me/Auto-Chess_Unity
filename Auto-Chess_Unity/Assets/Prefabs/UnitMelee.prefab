@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba051c68b5f6ac44b2767e9bd7af225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: 
+  unitName: Alan
   ability: {fileID: 0}
   isDead: 0
   target: {fileID: 0}

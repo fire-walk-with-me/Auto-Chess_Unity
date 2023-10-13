@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676b4655c801fc54ea7360751b71b2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: 
+  unitName: Eve
   ability: {fileID: 0}
   isDead: 0
   target: {fileID: 0}

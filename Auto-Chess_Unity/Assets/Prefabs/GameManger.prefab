@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e3136c6c0c45947ae71697e555c282, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roundManager: {fileID: 0}
+  roundManager: {fileID: 4916304726979953691}
 --- !u!114 &4916304726979953691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHuman: {fileID: 0}
   competitor: {fileID: 0}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 1397435420915662492}
   round: 0
-  Timer: 0
+  timer: 0
+  timerText: {fileID: 0}

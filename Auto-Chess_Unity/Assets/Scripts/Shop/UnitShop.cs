@@ -6,12 +6,12 @@ public class UnitShop : MonoBehaviour
 {
     [SerializeField] UIManager shopUI;
     List<Unit> unitsInShop = new List<Unit>();
-    UnitPool pool;
+    [SerializeField] UnitPool pool;
 
 
     void Start()
     {
-        pool = GetComponent<UnitPool>();
+        //pool = GetComponent<UnitPool>();
     }
 
     public void UpdateShop()
@@ -23,6 +23,6 @@ public class UnitShop : MonoBehaviour
 
     public List<Unit> GetNewUnitsForShop()
     {
-        return null;
+        return pool.GetRandomPool();
     }
 }
