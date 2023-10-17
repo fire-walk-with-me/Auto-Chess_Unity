@@ -14,6 +14,7 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] protected float mana;
     [SerializeField] protected float health;
+    [SerializeField] protected healthBar healthBar;
 
     enum Rarity
     {
@@ -27,6 +28,8 @@ public abstract class Unit : MonoBehaviour
         stats = GetComponent<Stats>();
         health = stats.GetStat("maxHealth");
         mana = stats.GetStat("maxMana");
+        healthBar = gameObject.GetComponentInChildren<healthBar>();
+        healthBar.SetMaxHealth(health);
     }
 
     private void Update()
@@ -60,6 +63,7 @@ public abstract class Unit : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= (damage - stats.GetStat("defence"));
+        healthBar.SetHealth(health);
     }
 
     public void TakeMana()

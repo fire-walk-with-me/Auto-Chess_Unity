@@ -32,7 +32,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUnitShop(List<Unit> NewUnitsToDisplay)
     {
-        unitsInStoreList.Clear();
+        //unitsInStoreList.Clear();
         unitsInStoreList = NewUnitsToDisplay;
 
         for (int i = 0; i < buttonList.Count; ++i)
