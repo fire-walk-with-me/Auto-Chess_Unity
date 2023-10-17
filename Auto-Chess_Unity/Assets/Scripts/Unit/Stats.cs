@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    [SerializeField]float maxHealth;
+    [SerializeField] float maxHealth;
     [SerializeField] float maxMana;
     [SerializeField] float manaRegen;
     [SerializeField] float attack;
@@ -33,17 +33,17 @@ public class Stats : MonoBehaviour
     {
         //Add a way that rarity affect stats
 
-        if (true)//Melee
+        if (gameObject.name == "UnitMelee")//Melee
         {
-            maxHealth = Random.Range(20,31);
-            maxMana = Random.Range(10,16);
-            manaRegen = Random.Range(2,8);
-            attack = Random.Range(5,8);
-            attackSpeed = Random.Range(2,5);
-            attackDistance = Random.Range(1,1.5f);
-            defence = Random.Range(1,4);
+            maxHealth = Random.Range(20, 31);
+            maxMana = Random.Range(10, 16);
+            manaRegen = Random.Range(2, 8);
+            attack = Random.Range(5, 8);
+            attackSpeed = Random.Range(2, 5);
+            attackDistance = Random.Range(1, 1.5f);
+            defence = Random.Range(1, 4);
         }
-        if (true)//Range
+        else if (gameObject.name == "UnitRange")//Range
         {
             maxHealth = Random.Range(15, 21);
             maxMana = Random.Range(10, 16);

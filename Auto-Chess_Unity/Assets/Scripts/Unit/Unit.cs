@@ -80,6 +80,7 @@ public abstract class Unit : MonoBehaviour
     private void SetDead()
     {
         isDead = true;
+        gameObject.GetComponentInChildren<Canvas>().enabled = false;
         gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
 
@@ -87,5 +88,6 @@ public abstract class Unit : MonoBehaviour
     {
         isDead = false;
         gameObject.GetComponent<MeshRenderer>().enabled = true;
+        gameObject.GetComponentInChildren<Canvas>().enabled = true;
     }
 }

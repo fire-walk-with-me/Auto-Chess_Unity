@@ -11,6 +11,7 @@ public class RoundManager : MonoBehaviour
 
     [SerializeField] int round;
     [SerializeField] float timer;
+    [SerializeField] const float maxTimer = 10;
     [SerializeField] TMP_Text timerText;
     [SerializeField] UIManager uiManager;
     [SerializeField] UnitShop shop;
@@ -46,11 +47,11 @@ public class RoundManager : MonoBehaviour
     private IEnumerator Round()
     {
         shop.UpdateShop();
-        timer = 2;
+        timer = maxTimer;
         timerText.color = Color.blue;
         yield return new WaitForSeconds(timer);
 
-        timer = 2;
+        timer = maxTimer;
         timerText.color = Color.red;
         activeRound = true;
 
