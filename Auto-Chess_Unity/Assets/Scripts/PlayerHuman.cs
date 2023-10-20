@@ -11,6 +11,11 @@ public class PlayerHuman : Player
         currency += gold;
     }
 
+    public void DecreaceGold(int gold)
+    {
+        currency -= gold;
+    }
+
     public int GetGoldCount()
     {
         return currency;

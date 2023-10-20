@@ -27,7 +27,7 @@ public class AI : MonoBehaviour
         {
             SimpleDecisionTree();
 
-            if (!unit.IsDead()) activeBehaviour.DoAction(); //called each frame for every bot that is alive. Change the active behaviour through an AI-model
+            if (!unit.IsDead() && unit.GetActive()) activeBehaviour.DoAction(); //called each frame for every bot that is alive. Change the active behaviour through an AI-model
 
         }
     }

@@ -9,19 +9,23 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] TMP_Text infoBarText;
     [SerializeField] TMP_Text currencyText;
+    Sideline sideline;
+    PlayerHuman player;
 
     [SerializeField] List<Button> buttonList = new List<Button>();
     List<Unit> unitsInStoreList = new List<Unit>();
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
+        sideline = FindObjectOfType<Sideline>().GetComponent<Sideline>();
         UpdateCurrencyText();
         UpdateInfoText("Character info will be displayed here");
     }
 
     public void UpdateCurrencyText()
     {
-        int currency = FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>().GetGoldCount();
+        int currency = player.GetGoldCount();
         currencyText.text = "Gold " + currency.ToString();
     }
 
@@ -38,6 +42,16 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < buttonList.Count; ++i)
         {
             buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].UnitName();
+        }
+    }
+
+    public void BuyUnit(GameObject unit, int cost)
+    {
+        if (cost <= player.GetGoldCount())
+        {
+            sideline.InstanciateUnit(unit);
+            player.DecreaceGold(cost);
+            //remove unit from store
         }
     }
 }

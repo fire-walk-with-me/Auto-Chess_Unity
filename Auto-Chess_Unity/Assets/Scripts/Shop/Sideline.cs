@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Sideline : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] List<GameObject> sidelines = new List<GameObject>();
+    PlayerHuman player;
+    UIManager uiManager;
+    const int maxSidelineSize = 6;
+
+    private void Start()
     {
-        
+        player = GameObject.FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
+        uiManager = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InstanciateUnit(GameObject unit)
     {
-        
+        if (sidelines.Count >= maxSidelineSize) return;
+
+        GameObject go = Instantiate(unit);
+        go.GetComponent<Unit>().SetInactive();
+        sidelines.Add(go);
+
+        //create a representation in sideline
     }
 }

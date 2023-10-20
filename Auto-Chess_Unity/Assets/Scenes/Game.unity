@@ -176,6 +176,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &46310324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -306,6 +307,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &475087646
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -430,6 +432,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &638450389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -554,6 +557,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &674767120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -678,6 +682,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &713990315
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -802,6 +807,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &723888284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -926,6 +932,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &728996703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1050,6 +1057,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &750588493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1311,6 +1319,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &826607715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1435,6 +1444,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1020356476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1677,6 +1687,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1129828745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1801,6 +1812,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1160829148
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1925,6 +1937,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1199716471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2117,6 +2130,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1296772400
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2241,6 +2255,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1303735653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2439,6 +2454,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1570166948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2581,6 +2597,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1650534059
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2753,6 +2770,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &1783338696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2938,6 +2956,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &2071865266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3188,6 +3207,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: aac0f13b56d25eb41902e7e138d2d99b, type: 2}
   - {fileID: 2100000, guid: 19e2c8d73a72d824889dc216e7b8d12b, type: 2}
   roundManager: {fileID: 1312542442}
+  hoverColor: {r: 0.51721567, g: 1, b: 0.06132078, a: 1}
 --- !u!65 &2145687085
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3365,11 +3385,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnitRange
       objectReference: {fileID: 0}
-    - target: {fileID: 1910760081997757261, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
-        type: 3}
-      propertyPath: m_TagString
-      value: Competitor
-      objectReference: {fileID: 0}
     - target: {fileID: 6573213737838049126, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3379,11 +3394,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573213737838049126, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0.24546814
       objectReference: {fileID: 0}
     - target: {fileID: 9045363183477644425, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
         type: 3}
@@ -3448,16 +3458,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 453743203794121644, guid: 889abf82e4a0b3547a9de17f5b81e050,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 453743203794121644, guid: 889abf82e4a0b3547a9de17f5b81e050,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3507,11 +3507,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1530777549529974027, guid: 889abf82e4a0b3547a9de17f5b81e050,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7212001639144885559, guid: 889abf82e4a0b3547a9de17f5b81e050,
         type: 3}

@@ -10,6 +10,7 @@ public abstract class Unit : MonoBehaviour
     [SerializeField] protected Ability ability;
     protected AI ai;
     [SerializeField] protected bool isDead;
+    [SerializeField] protected bool active;
     [SerializeField] protected GameObject target;
 
     [SerializeField] protected float mana;
@@ -90,4 +91,15 @@ public abstract class Unit : MonoBehaviour
         gameObject.GetComponent<MeshRenderer>().enabled = true;
         gameObject.GetComponentInChildren<Canvas>().enabled = true;
     }
+
+    public void SetInactive()
+    {
+        active = false;
+    }
+    public void SetActive()
+    {
+        active = true;
+    }
+
+    public bool GetActive() => active;
 }
