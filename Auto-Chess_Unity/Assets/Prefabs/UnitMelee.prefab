@@ -190,9 +190,9 @@ GameObject:
   - component: {fileID: 6195294722439448964}
   - component: {fileID: 7828189068524286820}
   - component: {fileID: 8241176040404691223}
-  - component: {fileID: 404936513461009177}
-  - component: {fileID: 1691851272082733741}
   - component: {fileID: 6078658755771393807}
+  - component: {fileID: 1691851272082733741}
+  - component: {fileID: 404936513461009177}
   - component: {fileID: 7666480410512690531}
   m_Layer: 0
   m_Name: UnitMelee
@@ -290,40 +290,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &404936513461009177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7212001639144885559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a415e529eebf20d40a8f50650e816bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeBehaviour: {fileID: 0}
-  playerAI: {fileID: 0}
-  playerHuman: {fileID: 0}
---- !u!114 &1691851272082733741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7212001639144885559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba051c68b5f6ac44b2767e9bd7af225, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitName: Alan
-  ability: {fileID: 0}
-  isDead: 0
-  target: {fileID: 0}
-  mana: 0
-  health: 0
-  healthBar: {fileID: 5769929945426804085}
 --- !u!54 &6078658755771393807
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -351,6 +317,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1691851272082733741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212001639144885559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba051c68b5f6ac44b2767e9bd7af225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Alan
+  ability: {fileID: 0}
+  isDead: 0
+  active: 0
+  target: {fileID: 0}
+  mana: 0
+  health: 0
+  healthBar: {fileID: 5769929945426804085}
+--- !u!114 &404936513461009177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212001639144885559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a415e529eebf20d40a8f50650e816bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeBehaviour: {fileID: 0}
+  playerAI: {fileID: 0}
+  playerHuman: {fileID: 0}
 --- !u!114 &7666480410512690531
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class RoundManager : MonoBehaviour
 
     [SerializeField] int round;
     [SerializeField] float timer;
-    [SerializeField] const float maxTimer = 10;
+    [SerializeField] float maxTimer = 10;
     [SerializeField] TMP_Text timerText;
     [SerializeField] UIManager uiManager;
     [SerializeField] UnitShop shop;

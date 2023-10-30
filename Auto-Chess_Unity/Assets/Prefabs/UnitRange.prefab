@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 3366565424410875235}
   - component: {fileID: 7707591155931100178}
   - component: {fileID: 3920732295279727324}
+  - component: {fileID: 8680546448729003515}
   - component: {fileID: 4272938758136509430}
   - component: {fileID: 2794199049335324941}
-  - component: {fileID: 8680546448729003515}
   - component: {fileID: 9041893784549831030}
-  - component: {fileID: -6050258224745943597}
   m_Layer: 0
   m_Name: UnitRange
-  m_TagString: Competitor
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,40 +110,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4272938758136509430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910760081997757261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 676b4655c801fc54ea7360751b71b2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  unitName: Eve
-  ability: {fileID: 0}
-  isDead: 0
-  target: {fileID: 0}
-  mana: 0
-  health: 0
-  healthBar: {fileID: -6050258224745943597}
---- !u!114 &2794199049335324941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910760081997757261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a415e529eebf20d40a8f50650e816bcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeBehaviour: {fileID: 0}
-  playerAI: {fileID: 0}
-  playerHuman: {fileID: 0}
 --- !u!54 &8680546448729003515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -172,6 +137,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4272938758136509430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910760081997757261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 676b4655c801fc54ea7360751b71b2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Eve
+  ability: {fileID: 0}
+  isDead: 0
+  active: 0
+  target: {fileID: 0}
+  mana: 0
+  health: 0
+  healthBar: {fileID: 8845046649200312702}
+--- !u!114 &2794199049335324941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910760081997757261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a415e529eebf20d40a8f50650e816bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeBehaviour: {fileID: 0}
+  playerAI: {fileID: 0}
+  playerHuman: {fileID: 0}
 --- !u!114 &9041893784549831030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,19 +191,6 @@ MonoBehaviour:
   attackSpeed: 6
   attackDistance: 8
   defence: 2
---- !u!114 &-6050258224745943597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910760081997757261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 714fcddec55bbfe4ab259fce1cfd75de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 8318057452428401413}
 --- !u!1 &6005350198017168972
 GameObject:
   m_ObjectHideFlags: 0
