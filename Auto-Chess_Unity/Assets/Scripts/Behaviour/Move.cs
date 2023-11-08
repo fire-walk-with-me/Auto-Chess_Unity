@@ -15,7 +15,7 @@ public class Move : AIBehaviour
 
         animator.SetBool("Walking", true);
         animator.SetBool("Attacking", false);
-        gameObject.transform.position += direction * Time.deltaTime * 2;
+        gameObject.transform.position += direction * Time.deltaTime * 3;
     }
 
     private void CalculateDirection()

@@ -761,6 +761,89 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826607712}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1045304802
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 453743203794121644, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 453743203794121644, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826365775921242849, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212001639144885559, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_Name
+      value: UnitMelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212001639144885559, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_TagString
+      value: Competitor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 889abf82e4a0b3547a9de17f5b81e050, type: 3}
 --- !u!1 &1054424345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1518,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 316fbdf19983ca843a71443050234e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1443893734 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1910760081997757261, guid: 10f184173d9bdc245ae33f4f01ae5bbb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1099879854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1463994022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7212001639144885559, guid: 889abf82e4a0b3547a9de17f5b81e050,
+    type: 3}
+  m_PrefabInstance: {fileID: 1045304802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1553080946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,7 +1967,8 @@ MonoBehaviour:
   characterLimit: 0
   health: 0
   ActiveCharacters:
-  - {fileID: 1619485264}
+  - {fileID: 1443893734}
+  - {fileID: 1463994022}
   currency: 0
 --- !u!1 &2071865263
 GameObject:
@@ -2578,3 +2674,4 @@ SceneRoots:
   - {fileID: 6064082583048281832}
   - {fileID: 1223700577}
   - {fileID: 1553080949}
+  - {fileID: 1045304802}
