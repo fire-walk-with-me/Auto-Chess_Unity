@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
+//This script will cause the unit to attack its target on a interval based on the units attack-speed
+
 public class Attack : AIBehaviour
 {
     [SerializeField] float attackSpeed;
@@ -25,10 +27,8 @@ public class Attack : AIBehaviour
             timer = attackTime;
         }
 
-        if (thisUnit.GetTarget().GetComponent<Unit>().IsDead())
-        {
-            thisUnit.RemoveTarget();
-        }
+        animator.SetBool("Walking", false);
+        animator.SetBool("Attacking", true);
 
         timer -= Time.deltaTime;
     }
@@ -37,6 +37,7 @@ public class Attack : AIBehaviour
     {
         Debug.Log(gameObject + " attacks for " + attackDamage + " Dmg");
         thisUnit.GetTarget().GetComponent<Unit>().TakeDamage(attackDamage);
+        thisUnit.attackTarget();
         yield return null;
     }
 }

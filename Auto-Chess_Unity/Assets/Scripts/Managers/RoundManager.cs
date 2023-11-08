@@ -47,7 +47,7 @@ public class RoundManager : MonoBehaviour
     private IEnumerator Round()
     {
         shop.UpdateShop();
-        timer = maxTimer;
+        timer = 2; //change
         timerText.color = Color.blue;
         yield return new WaitForSeconds(timer);
 
@@ -58,6 +58,10 @@ public class RoundManager : MonoBehaviour
         yield return new WaitForSeconds(timer);
 
         activeRound = false;
+        
+        playerHuman.ResetCharacters();
+        competitor.ResetCharacters();
+
         CheckWinner();
         ResetGame();
         round++;

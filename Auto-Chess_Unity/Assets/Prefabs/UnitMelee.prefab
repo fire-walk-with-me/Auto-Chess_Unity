@@ -330,13 +330,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Alan
-  ability: {fileID: 0}
-  isDead: 0
-  active: 0
   target: {fileID: 0}
-  mana: 0
-  health: 0
-  healthBar: {fileID: 5769929945426804085}
+  ability: {fileID: 0}
 --- !u!114 &404936513461009177
 MonoBehaviour:
   m_ObjectHideFlags: 0

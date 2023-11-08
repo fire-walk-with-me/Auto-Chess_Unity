@@ -7,15 +7,17 @@ public abstract class Unit : MonoBehaviour
 {
     [SerializeField] private string unitName;
     protected Stats stats;
-    [SerializeField] protected Ability ability;
     protected AI ai;
-    [SerializeField] protected bool isDead;
-    [SerializeField] protected bool active;
+    protected bool isDead;
+    protected bool active;
     [SerializeField] protected GameObject target;
 
-    [SerializeField] protected float mana;
-    [SerializeField] protected float health;
-    [SerializeField] protected healthBar healthBar;
+    protected float mana;
+    protected float health;
+    protected healthBar healthBar;
+    [SerializeField] protected Ability ability;
+
+    protected Vector3 startPosition;
 
     enum Rarity
     {
@@ -31,16 +33,17 @@ public abstract class Unit : MonoBehaviour
         mana = stats.GetStat("maxMana");
         healthBar = gameObject.GetComponentInChildren<healthBar>();
         healthBar.SetMaxHealth(health);
+        ai = gameObject.GetComponent<AI>();
     }
 
     private void Update()
     {
-        if (health <= 0)
-        {
-            SetDead();
-        }
-
         RegenrateMana();
+    }
+
+    public virtual void attackTarget()
+    {
+
     }
 
     public void SetTarget(GameObject target)
@@ -59,12 +62,19 @@ public abstract class Unit : MonoBehaviour
     public Stats Stats() => stats;
     public float Health() => health;
     public float Mana() => mana;
+
+    public AI Ai() => ai;
     public string UnitName() => unitName;
 
     public void TakeDamage(float damage)
     {
         health -= (damage - stats.GetStat("defence"));
         healthBar.SetHealth(health);
+
+        if (!isDead && health <= 0)
+        {
+            SetDead();
+        }
     }
 
     public void TakeMana()
@@ -82,14 +92,24 @@ public abstract class Unit : MonoBehaviour
     {
         isDead = true;
         gameObject.GetComponentInChildren<Canvas>().enabled = false;
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        foreach (SkinnedMeshRenderer smr in gameObject.GetComponentsInChildren<SkinnedMeshRenderer>())
+        {
+            smr.enabled = false;
+        }
+        RemoveAsTarget(gameObject);
     }
 
-    private void SetAlive()
+    public void SetAlive()
     {
         isDead = false;
-        gameObject.GetComponent<MeshRenderer>().enabled = true;
+        health = stats.GetStat("maxHealth");
+        healthBar.SetHealth(health);
+        RemoveTarget();
         gameObject.GetComponentInChildren<Canvas>().enabled = true;
+        foreach (SkinnedMeshRenderer smr in gameObject.GetComponentsInChildren<SkinnedMeshRenderer>())
+        {
+            smr.enabled = true;
+        }
     }
 
     public void SetInactive()
@@ -102,4 +122,21 @@ public abstract class Unit : MonoBehaviour
     }
 
     public bool GetActive() => active;
+
+    private void RemoveAsTarget(GameObject thisUnit)
+    {
+        foreach (GameObject go in ai.GetAIPlayer().GetCharacters())
+        {
+            Unit otherUnit = go.GetComponent<Unit>();
+            if(otherUnit.GetTarget() == thisUnit)
+                otherUnit.RemoveTarget();
+        }
+
+        foreach (GameObject go in ai.GetHumanPlayer().GetCharacters())
+        {
+            Unit unit = go.GetComponent<Unit>();
+            if (unit.GetTarget() == thisUnit) 
+                unit.RemoveTarget();
+        }
+    }
 }

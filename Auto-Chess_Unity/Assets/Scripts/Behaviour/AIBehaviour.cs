@@ -10,6 +10,7 @@ public abstract class AIBehaviour : MonoBehaviour
     protected PlayerHuman player;
     protected AI aiModel;
     protected Unit thisUnit;
+    protected Animator animator;
 
     private void Awake()
     {
@@ -17,6 +18,12 @@ public abstract class AIBehaviour : MonoBehaviour
         competitor = aiModel.GetAIPlayer();
         player = aiModel.GetHumanPlayer();
         thisUnit = gameObject.GetComponent<Unit>();
+        animator = gameObject.GetComponentInChildren<Animator>();
+    }
+
+    public Animator GetAnimator()
+    {
+        return animator;
     }
 
     public virtual void DoAction() { }

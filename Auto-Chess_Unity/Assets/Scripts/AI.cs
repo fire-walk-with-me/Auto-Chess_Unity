@@ -36,25 +36,25 @@ public class AI : MonoBehaviour
         return activeBehaviour;
     }
 
-    private void setActiveBehaviour(AIBehaviour behaviour)
+    private void SetActiveBehaviour(AIBehaviour behaviour)
     {
         activeBehaviour = behaviour;
     }
 
     public void SimpleDecisionTree()
     {
-        if (!unit.GetTarget() || deadTarget()) setActiveBehaviour(gameObject.GetComponent<Target>());
+        if (!unit.GetTarget() || deadTarget()) SetActiveBehaviour(gameObject.GetComponent<Target>());
 
         else if (Vector3.Distance(gameObject.transform.position, unit.GetTarget().transform.position) - 0.2f > unit.Stats().GetStat("attackDistance"))
-            setActiveBehaviour(gameObject.GetComponent<Move>());
+            SetActiveBehaviour(gameObject.GetComponent<Move>());
 
         else if (Vector3.Distance(gameObject.transform.position, unit.GetTarget().transform.position) <= unit.Stats().GetStat("attackDistance") &&
             unit.Mana() >= unit.Stats().GetStat("maxMana"))
-            setActiveBehaviour(gameObject.GetComponent<UseAbility>());
+            SetActiveBehaviour(gameObject.GetComponent<UseAbility>());
 
         else if (Vector3.Distance(gameObject.transform.position, unit.GetTarget().transform.position) <= unit.Stats().GetStat("attackDistance") &&
             unit.Mana() < unit.Stats().GetStat("maxMana"))
-            setActiveBehaviour(gameObject.GetComponent<Attack>());
+            SetActiveBehaviour(gameObject.GetComponent<Attack>());
     }
 
     private bool deadTarget()
@@ -70,5 +70,12 @@ public class AI : MonoBehaviour
     public PlayerHuman GetHumanPlayer()
     {
         return playerHuman;
+    }
+
+    public void SetUnitIdle()
+    {
+        GetComponentInChildren<Animator>().SetBool("Walking", false);
+        GetComponentInChildren<Animator>().SetBool("Attacking", false);
+        SetActiveBehaviour(null);
     }
 }

@@ -13,6 +13,8 @@ public class Move : AIBehaviour
     {
         CalculateDirection();
 
+        animator.SetBool("Walking", true);
+        animator.SetBool("Attacking", false);
         gameObject.transform.position += direction * Time.deltaTime * 2;
     }
 
@@ -21,5 +23,6 @@ public class Move : AIBehaviour
         heading = thisUnit.GetTarget().transform.position - transform.position;
         distanceToTarget = heading.magnitude;
         direction = heading / distanceToTarget;
+        gameObject.transform.rotation = Quaternion.LookRotation(direction);
     }
 }

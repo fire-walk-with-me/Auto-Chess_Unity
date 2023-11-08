@@ -17,15 +17,14 @@ public class Target : AIBehaviour
 
     public override void DoAction()
     {
-        target = getClosestEnemy();
-
-        targetEnemy();
+        animator.SetBool("Walking", false);
+        animator.SetBool("Attacking", false);
+        targetEnemy(getClosestEnemy());
     }
 
     private GameObject getClosestEnemy()
-    {
-        
-        if (belongsToPlayer)
+    { 
+        if (!belongsToPlayer)
         {
             targetList = competitor.GetCharacters();
         }
@@ -37,12 +36,13 @@ public class Target : AIBehaviour
 
         foreach(GameObject enemy in targetList)
         {
+            if (enemy.GetComponent<Unit>().IsDead()) continue;
             if(Vector3.Distance(thisUnit.transform.position, enemy.transform.position) <= Vector3.Distance(thisUnit.transform.position, closestTarget.transform.position))
                 closestTarget = enemy;
         }
         return closestTarget;
     }
-    public void targetEnemy()
+    public void targetEnemy(GameObject target)
     {
         thisUnit.SetTarget(target);
     }

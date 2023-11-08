@@ -6,5 +6,8 @@ using UnityEngine;
 
 public class Melee : Unit
 {
-
+    public override void attackTarget()
+    {
+        //play animation
+    }
 }
