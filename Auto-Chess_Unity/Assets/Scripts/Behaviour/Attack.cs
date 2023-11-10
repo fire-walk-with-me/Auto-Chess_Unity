@@ -35,7 +35,7 @@ public class Attack : AIBehaviour
 
     private IEnumerator AttackEnemy()
     {
-        Debug.Log(gameObject + " attacks for " + attackDamage + " Dmg");
+        //Debug.Log(gameObject + " attacks for " + attackDamage + " Dmg");
         thisUnit.GetTarget().GetComponent<Unit>().TakeDamage(attackDamage);
         thisUnit.attackTarget();
         yield return null;

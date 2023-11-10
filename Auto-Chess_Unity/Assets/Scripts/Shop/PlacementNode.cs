@@ -9,6 +9,8 @@ public class PlacementNode : MonoBehaviour
     [SerializeField] List<Material> materialList = new List<Material>();
     [SerializeField] RoundManager roundManager;
     [SerializeField] Color hoverColor;
+    PlayerHuman playerHuman;
+    Sideline sideline;
     Vector3 position;
     Renderer rend;
     GameObject unitPlaced;
@@ -17,6 +19,8 @@ public class PlacementNode : MonoBehaviour
 
     private void Start()
     {
+        sideline = FindObjectOfType<Sideline>().GetComponent<Sideline>();
+        playerHuman = FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
         occupied = false;
         SetOpaque();
         position = transform.position;
@@ -40,15 +44,30 @@ public class PlacementNode : MonoBehaviour
         //    startColor = rend.material.color;
         //}
 
-        if (roundManager.ActiveRound()) SetTransparant();
+        if (roundManager.ActiveRound() && !occupied) SetTransparant();
         else SetOpaque();
     }
 
     private void OnMouseDown()
     {
-        if (unitPlaced != null) return;
+        if(unitPlaced != null)
+        {
+            if (!sideline.SpaceOnBench()) return;
 
-        
+            ChangeOccupied();
+            sideline.PutUnitOnBench(unitPlaced);
+            playerHuman.RemoveFromActiveUnits(unitPlaced);
+            unitPlaced = null;
+        }
+        if(unitPlaced == null)
+        {
+            if (sideline.GetUnitLastPressed() == null) return;
+
+            unitPlaced = sideline.GetUnitLastPressed();
+            unitPlaced.GetComponent<Unit>().SetStartingPosition(position);
+            playerHuman.AddToActiveUnits(unitPlaced);
+            ChangeOccupied();
+        }
     }
 
     private void OnMouseEnter()

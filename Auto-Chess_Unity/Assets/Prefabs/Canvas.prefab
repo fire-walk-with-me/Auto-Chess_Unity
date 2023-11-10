@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 897812752936531342}
   - component: {fileID: 2614802978427458826}
   - component: {fileID: 6901294745923938802}
+  - component: {fileID: 6020321084816495361}
   m_Layer: 5
   m_Name: Unit5
   m_TagString: Untagged
@@ -120,7 +121,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2614802978427458826}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6020321084816495361}
+        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6020321084816495361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473678347216083962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2126c3df0b7fa4ab051c046998dc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &583203547922809459
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,7 +694,7 @@ GameObject:
   - component: {fileID: 8194803304209792309}
   - component: {fileID: 1987663903061414680}
   m_Layer: 5
-  m_Name: Sideline
+  m_Name: SidelineText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,7 +717,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 101.62, y: 58.9316}
+  m_SizeDelta: {x: 101.62, y: 27.53}
   m_Pivot: {x: 0.49999982, y: 0.49999997}
 --- !u!222 &8194803304209792309
 CanvasRenderer:
@@ -1415,6 +1440,7 @@ GameObject:
   - component: {fileID: 7194715430516764091}
   - component: {fileID: 7984225317757949309}
   - component: {fileID: 7693568020480747340}
+  - component: {fileID: 7252917108678448970}
   m_Layer: 5
   m_Name: Unit4
   m_TagString: Untagged
@@ -1523,7 +1549,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7984225317757949309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7252917108678448970}
+        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7252917108678448970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2654370751287529319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2126c3df0b7fa4ab051c046998dc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2760644126316468053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +1854,7 @@ GameObject:
   - component: {fileID: 5936166035489151523}
   - component: {fileID: 8217433213610312794}
   - component: {fileID: 1691628379714281218}
+  - component: {fileID: 8537142224899999645}
   m_Layer: 5
   m_Name: Unit6
   m_TagString: Untagged
@@ -1912,7 +1963,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8217433213610312794}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8537142224899999645}
+        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8537142224899999645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3476854888353694861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2126c3df0b7fa4ab051c046998dc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3969265565133033186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,6 +2600,8 @@ GameObject:
   - component: {fileID: 8362269351999815009}
   - component: {fileID: 8169569103324706550}
   - component: {fileID: 2507650462216206658}
+  - component: {fileID: 7030847731703068485}
+  - component: {fileID: 4604384469282691330}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -2596,6 +2673,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7030847731703068485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6125129550744530399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4424b6fb804e67049a85c4eab6541c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopUI: {fileID: 3129424297954506997}
+  pool: {fileID: 4604384469282691330}
+  sideline: {fileID: 6134728461121980336}
+--- !u!114 &4604384469282691330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6125129550744530399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e211e996c19764db335dbc37d92671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eachUniqueUnit:
+  - {fileID: 4272938758136509430, guid: 10f184173d9bdc245ae33f4f01ae5bbb, type: 3}
+  - {fileID: 1691851272082733741, guid: 889abf82e4a0b3547a9de17f5b81e050, type: 3}
 --- !u!1 &6327151243906020533
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,6 +2715,7 @@ GameObject:
   - component: {fileID: 1289155597604707194}
   - component: {fileID: 1437325403307330524}
   - component: {fileID: 8904689395782844240}
+  - component: {fileID: 4210275035034560664}
   m_Layer: 5
   m_Name: Unit2
   m_TagString: Untagged
@@ -2716,7 +2824,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1437325403307330524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4210275035034560664}
+        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4210275035034560664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6327151243906020533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2126c3df0b7fa4ab051c046998dc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6395882017324981073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3373,6 +3505,7 @@ GameObject:
   - component: {fileID: 5297744732580586029}
   - component: {fileID: 8002055839770160374}
   - component: {fileID: 6469198789485973465}
+  - component: {fileID: 422519672233524057}
   m_Layer: 5
   m_Name: Unit1
   m_TagString: Untagged
@@ -3481,7 +3614,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8002055839770160374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 422519672233524057}
+        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &422519672233524057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8731850597690984537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2126c3df0b7fa4ab051c046998dc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8779161143285345899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3615,6 +3772,7 @@ GameObject:
   - component: {fileID: 4911839680495173256}
   - component: {fileID: 7184248740101235388}
   - component: {fileID: 4978148724477327543}
+  - component: {fileID: 3523339302851940891}
   m_Layer: 5
   m_Name: Unit3
   m_TagString: Untagged
@@ -3723,7 +3881,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7184248740101235388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3523339302851940891}
+        m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
+        m_MethodName: PressButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3523339302851940891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797410913046617315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2126c3df0b7fa4ab051c046998dc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8841903298006082649
 GameObject:
   m_ObjectHideFlags: 0

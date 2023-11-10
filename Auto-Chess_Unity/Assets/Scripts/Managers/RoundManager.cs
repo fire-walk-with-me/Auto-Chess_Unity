@@ -47,7 +47,7 @@ public class RoundManager : MonoBehaviour
     private IEnumerator Round()
     {
         shop.UpdateShop();
-        timer = 2; //change
+        timer = 10; //change
         timerText.color = Color.blue;
         yield return new WaitForSeconds(timer);
 

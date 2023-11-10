@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     Sideline sideline;
     PlayerHuman player;
 
+
     [SerializeField] List<Button> buttonList = new List<Button>();
     List<Unit> unitsInStoreList = new List<Unit>();
 
@@ -42,16 +43,34 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < buttonList.Count; ++i)
         {
             buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].UnitName();
+            buttonList[i].gameObject.GetComponent<ShopButton>().UpdateUnitOnButton(unitsInStoreList[i]);
         }
     }
 
-    public void BuyUnit(GameObject unit, int cost)
+    public void UpdateUnitShopName(Unit unitToRemove)
+    {
+        unitsInStoreList.Remove(unitToRemove);
+
+        for (int i = 0; i < buttonList.Count; ++i)
+        {
+            if (unitsInStoreList[i] == null)
+            {
+                buttonList[i].GetComponentInChildren<TMP_Text>().text = "SOLD";
+                continue;
+            }
+            buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].UnitName();
+        }
+    }
+
+    public void BuyUnit(GameObject Unit, int cost)
     {
         if (cost <= player.GetGoldCount())
         {
-            sideline.InstanciateUnit(unit);
+            //sideline.InstanciateUnit();
             player.DecreaceGold(cost);
+
             //remove unit from store
         }
     }
+
 }

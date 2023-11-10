@@ -9,7 +9,6 @@ public abstract class Unit : MonoBehaviour
     protected Stats stats;
     protected AI ai;
     protected bool isDead;
-    protected bool active;
     [SerializeField] protected GameObject target;
 
     protected float mana;
@@ -44,6 +43,11 @@ public abstract class Unit : MonoBehaviour
     public virtual void attackTarget()
     {
 
+    }
+
+    public void SetStartingPosition(Vector3 startPos)
+    {
+        startPos = startPosition;
     }
 
     public void SetTarget(GameObject target)
@@ -88,7 +92,7 @@ public abstract class Unit : MonoBehaviour
             mana += (stats.GetStat("manaRegen") * Time.deltaTime) / 5;
     }
 
-    private void SetDead()
+    public void SetDead()
     {
         isDead = true;
         gameObject.GetComponentInChildren<Canvas>().enabled = false;
@@ -112,16 +116,10 @@ public abstract class Unit : MonoBehaviour
         }
     }
 
-    public void SetInactive()
+    public void ResetPoistion()
     {
-        active = false;
+        gameObject.transform.position = startPosition;
     }
-    public void SetActive()
-    {
-        active = true;
-    }
-
-    public bool GetActive() => active;
 
     private void RemoveAsTarget(GameObject thisUnit)
     {

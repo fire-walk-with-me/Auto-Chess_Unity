@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Sideline : MonoBehaviour
@@ -8,6 +9,7 @@ public class Sideline : MonoBehaviour
     PlayerHuman player;
     UIManager uiManager;
     const int maxSidelineSize = 6;
+    GameObject unitLastPressed;
 
     private void Start()
     {
@@ -15,14 +17,30 @@ public class Sideline : MonoBehaviour
         uiManager = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
     }
 
+    public bool SpaceOnBench()
+    {
+        if(sidelines.Count >= maxSidelineSize) return false;
+
+        return true;
+    }
+
+    public GameObject GetUnitLastPressed()
+    {
+        //remove unit from list
+        return unitLastPressed;
+    }
+
     public void InstanciateUnit(GameObject unit)
     {
-        if (sidelines.Count >= maxSidelineSize) return;
-
         GameObject go = Instantiate(unit);
-        go.GetComponent<Unit>().SetInactive();
+        go.GetComponent<Unit>().SetDead();
         sidelines.Add(go);
 
         //create a representation in sideline
+    }
+
+    public void PutUnitOnBench(GameObject unit)
+    {
+        sidelines.Add(unit);
     }
 }

@@ -6,9 +6,9 @@ using UnityEngine;
 
 public abstract class Player : MonoBehaviour
 {
-    [SerializeField] int characterLimit;
-    [SerializeField] float health;
-    [SerializeField] List<GameObject> ActiveCharacters;
+    [SerializeField] protected int characterLimit;
+    [SerializeField] protected float health;
+    [SerializeField] protected List<GameObject> ActiveCharacters;
 
     public int getActiveCharacterAmount()
     {
@@ -27,6 +27,7 @@ public abstract class Player : MonoBehaviour
             Unit unit = character.GetComponent<Unit>();
 
             unit.SetAlive();
+            unit.ResetPoistion();
             unit.Ai().SetUnitIdle();
         }
     }
