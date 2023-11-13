@@ -123,6 +123,8 @@ public abstract class Unit : MonoBehaviour
 
     private void RemoveAsTarget(GameObject thisUnit)
     {
+        if(!ai) ai = gameObject.GetComponent<AI>();
+
         foreach (GameObject go in ai.GetAIPlayer().GetCharacters())
         {
             Unit otherUnit = go.GetComponent<Unit>();

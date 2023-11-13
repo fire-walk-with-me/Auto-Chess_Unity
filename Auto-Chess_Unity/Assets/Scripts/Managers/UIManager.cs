@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
 
 
     [SerializeField] List<Button> buttonList = new List<Button>();
-    List<Unit> unitsInStoreList = new List<Unit>();
+    List<GameObject> unitsInStoreList = new List<GameObject>();
 
     private void Start()
     {
@@ -35,42 +35,16 @@ public class UIManager : MonoBehaviour
         infoBarText.text = info;
     }
 
-    public void UpdateUnitShop(List<Unit> NewUnitsToDisplay)
+    public void UpdateUnitShop(List<GameObject> NewUnitsToDisplay)
     {
         //unitsInStoreList.Clear();
         unitsInStoreList = NewUnitsToDisplay;
 
         for (int i = 0; i < buttonList.Count; ++i)
         {
-            buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].UnitName();
+            buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].GetComponent<Unit>().UnitName();
             buttonList[i].gameObject.GetComponent<ShopButton>().UpdateUnitOnButton(unitsInStoreList[i]);
+            buttonList[i].gameObject.GetComponent<ShopButton>().SetSold(false);
         }
     }
-
-    public void UpdateUnitShopName(Unit unitToRemove)
-    {
-        unitsInStoreList.Remove(unitToRemove);
-
-        for (int i = 0; i < buttonList.Count; ++i)
-        {
-            if (unitsInStoreList[i] == null)
-            {
-                buttonList[i].GetComponentInChildren<TMP_Text>().text = "SOLD";
-                continue;
-            }
-            buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].UnitName();
-        }
-    }
-
-    public void BuyUnit(GameObject Unit, int cost)
-    {
-        if (cost <= player.GetGoldCount())
-        {
-            //sideline.InstanciateUnit();
-            player.DecreaceGold(cost);
-
-            //remove unit from store
-        }
-    }
-
 }

@@ -1,17 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using TMPro;
 using UnityEngine;
 
 public class ShopButton : MonoBehaviour
 {
     Unit unitOnButton;
-    GameObject unit; 
+    GameObject unit;
     UIManager manager;
+    UnitShop unitShop;
+    bool sold;
 
     private void Start()
     {
-        manager = FindObjectOfType < UIManager>().GetComponent<UIManager>();
+        manager = FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        unitShop = FindObjectOfType<UnitShop>().GetComponent<UnitShop>();
     }
 
     private void OnMouseEnter()
@@ -26,14 +30,23 @@ public class ShopButton : MonoBehaviour
 
     public void PressButton()
     {
-        manager.BuyUnit(unit, 2);
-        unit = null;
-        unitOnButton = null;
-        manager.upd
+        if (sold) return;
+
+        if (unitShop.BuyUnit(unit, 2))
+        {
+            gameObject.GetComponentInChildren<TMP_Text>().text = "SOLD";
+            sold = true;
+        }
     }
 
-    public void UpdateUnitOnButton(Unit unit)
+    public void UpdateUnitOnButton(GameObject UnitGO)
     {
-        unitOnButton = unit;
+        unit = UnitGO;
+        unitOnButton = unit.GetComponent<Unit>();
+    }
+
+    public void SetSold(bool s)
+    {
+        sold = s;
     }
 }

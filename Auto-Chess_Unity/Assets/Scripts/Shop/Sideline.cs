@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class Sideline : MonoBehaviour
 {
     [SerializeField] List<GameObject> sidelines = new List<GameObject>();
+    [SerializeField] List<Button> buttonList = new List<Button>();
     PlayerHuman player;
     UIManager uiManager;
     const int maxSidelineSize = 6;
@@ -19,7 +22,7 @@ public class Sideline : MonoBehaviour
 
     public bool SpaceOnBench()
     {
-        if(sidelines.Count >= maxSidelineSize) return false;
+        if (sidelines.Count >= maxSidelineSize) return false;
 
         return true;
     }

@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class UnitPool : MonoBehaviour
 {
-    [SerializeField] List<Unit> eachUniqueUnit;
-    List<Unit> randomPick = new List<Unit>();
+    [SerializeField] List<GameObject> eachUniqueUnit;
+    List<GameObject> randomPick = new List<GameObject>();
     string playerTag = "Player";
     string competitorTag = "Competitor";
-    public Unit GetRandomUnit()
+    public GameObject GetRandomUnit()
     {
-        Unit unit = eachUniqueUnit[Random.Range(0, eachUniqueUnit.Count)];
+        GameObject unit = eachUniqueUnit[Random.Range(0, eachUniqueUnit.Count)];
         unit.tag = competitorTag;
         return unit;
     }
 
-    public List<Unit> GetRandomPool()
+    public List<GameObject> GetRandomPool()
     {
         randomPick.Clear();
 

@@ -8,6 +8,6 @@ public class UseAbility : AIBehaviour
     {
         thisUnit.TakeMana();
 
-        Debug.Log(gameObject + "Cast Ability");
+        //Debug.Log(gameObject + "Cast Ability");
     }
 }

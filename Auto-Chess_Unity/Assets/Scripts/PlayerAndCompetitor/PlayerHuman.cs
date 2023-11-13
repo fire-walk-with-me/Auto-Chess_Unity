@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHuman : Player
 {
-    [SerializeField] int currency;
+    [SerializeField] int currency = 10; // change before release
 
     public void IncreaseGold(int gold)
     {

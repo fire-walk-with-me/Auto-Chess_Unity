@@ -5,7 +5,7 @@ using UnityEngine;
 public class UnitShop : MonoBehaviour
 {
     [SerializeField] UIManager shopUI;
-    List<Unit> unitsInShop = new List<Unit>();
+    List<GameObject> unitsInShop = new List<GameObject>();
     [SerializeField] UnitPool pool;
     [SerializeField] Sideline sideline;
 
@@ -16,20 +16,23 @@ public class UnitShop : MonoBehaviour
         shopUI.UpdateUnitShop(unitsInShop);
     }
 
-    public List<Unit> GetNewUnitsForShop()
+    public List<GameObject> GetNewUnitsForShop()
     {
         return pool.GetRandomPool();
     }
 
-    public void BuyUnit(GameObject go, int unitCost)
+    public bool BuyUnit(GameObject unit, int unitCost)
     {
-        if(!go) return;
+        if(!unit) return false;
 
         PlayerHuman ph = FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
         if (ph.GetGoldCount() >= unitCost && sideline.SpaceOnBench())
         {
             ph.DecreaceGold(unitCost);
-            sideline.InstanciateUnit(go);
+            shopUI.UpdateCurrencyText();
+            sideline.InstanciateUnit(unit);
+            return true;
         }
+        return false;
     }
 }
