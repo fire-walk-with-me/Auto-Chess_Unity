@@ -839,6 +839,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Competitor
       objectReference: {fileID: 0}
+    - target: {fileID: 7828189068524286820, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553539994720560438, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553539994720560438, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8652023195561153144, guid: 889abf82e4a0b3547a9de17f5b81e050,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
