@@ -33,7 +33,7 @@ public class RoundManager : MonoBehaviour
 
     private void GiveGold()
     {
-        int gold = 2;
+        int gold = 4;
 
         //add bonuses or interest
 

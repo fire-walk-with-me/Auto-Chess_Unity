@@ -18,6 +18,11 @@ public class Sideline : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
         uiManager = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+
+        for (int i = 0; i < buttonList.Count; i++)
+        {
+            buttonList[i].gameObject.SetActive(false);
+        }
     }
 
     public bool SpaceOnBench()
@@ -29,21 +34,40 @@ public class Sideline : MonoBehaviour
 
     public GameObject GetUnitLastPressed()
     {
-        //remove unit from list
         return unitLastPressed;
+
+        //remove unit from list
     }
 
     public void InstanciateUnit(GameObject unit)
     {
-        GameObject go = Instantiate(unit);
-        go.GetComponent<Unit>().SetDead();
-        sidelines.Add(go);
+        Instantiate(unit);
+        unit.GetComponent<Unit>().SetDead();
+        sidelines.Add(unit);
 
-        //create a representation in sideline
+        for (int i = 0; i < sidelines.Count; i++)
+        {
+            if (buttonList[i].gameObject.activeSelf) continue;
+
+            buttonList[i].GetComponent<SidelineButton>().SetUnitOnButton(unit);
+        }
+
+        UpdateSidelinesButtons();
     }
 
     public void PutUnitOnBench(GameObject unit)
     {
         sidelines.Add(unit);
+    }
+
+    public void UpdateSidelinesButtons()
+    {
+        for (int i = 0; i < sidelines.Count; i++)
+        {
+            if (buttonList[i].gameObject.activeSelf) continue;
+
+            buttonList[i].gameObject.SetActive(true);
+            buttonList[i].GetComponent<SidelineButton>().SetName();
+        }
     }
 }
