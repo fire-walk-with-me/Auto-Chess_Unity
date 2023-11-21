@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Target : AIBehaviour
 {
-    [SerializeField] GameObject target;
+    //[SerializeField] GameObject target;
     [SerializeField] bool belongsToPlayer;
     [SerializeField] List<GameObject> targetList = new List<GameObject>();
     [SerializeField] GameObject closestTarget;
@@ -24,7 +24,7 @@ public class Target : AIBehaviour
 
     private GameObject getClosestEnemy()
     { 
-        if (!belongsToPlayer)
+        if (belongsToPlayer)
         {
             targetList = competitor.GetCharacters();
         }

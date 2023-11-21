@@ -40,7 +40,7 @@ public abstract class Unit : MonoBehaviour
         RegenrateMana();
     }
 
-    public virtual void attackTarget()
+    public virtual void AttackTarget()
     {
 
     }
@@ -123,19 +123,19 @@ public abstract class Unit : MonoBehaviour
 
     private void RemoveAsTarget(GameObject thisUnit)
     {
-        if(!ai) ai = gameObject.GetComponent<AI>();
+        if (!ai) ai = gameObject.GetComponent<AI>();
 
         foreach (GameObject go in ai.GetAIPlayer().GetCharacters())
         {
             Unit otherUnit = go.GetComponent<Unit>();
-            if(otherUnit.GetTarget() == thisUnit)
+            if (otherUnit.GetTarget() == thisUnit)
                 otherUnit.RemoveTarget();
         }
 
         foreach (GameObject go in ai.GetHumanPlayer().GetCharacters())
         {
             Unit unit = go.GetComponent<Unit>();
-            if (unit.GetTarget() == thisUnit) 
+            if (unit.GetTarget() == thisUnit)
                 unit.RemoveTarget();
         }
     }

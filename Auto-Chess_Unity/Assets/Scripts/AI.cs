@@ -12,8 +12,8 @@ public class AI : MonoBehaviour
 
     private void Awake()
     {
-        playerAI = FindObjectOfType<PlayerAI>().GetComponent<PlayerAI>();
-        playerHuman = FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
+        if (!playerAI) playerAI = FindObjectOfType<PlayerAI>().GetComponent<PlayerAI>();
+        if (!playerHuman) playerHuman = FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
         roundManager = FindObjectOfType<RoundManager>().GetComponent<RoundManager>();
         gameObject.AddComponent<Target>();
         gameObject.AddComponent<Attack>();
@@ -25,7 +25,7 @@ public class AI : MonoBehaviour
     {
         if (roundManager.ActiveRound())
         {
-            SimpleDecisionTree();
+            AIMODEL();
 
             if (!unit.IsDead()) activeBehaviour.DoAction(); //called each frame for every bot that is alive. Change the active behaviour through an AI-model
 
@@ -41,7 +41,7 @@ public class AI : MonoBehaviour
         activeBehaviour = behaviour;
     }
 
-    public void SimpleDecisionTree()
+    public void AIMODEL()
     {
         if (!unit.GetTarget() || deadTarget()) SetActiveBehaviour(gameObject.GetComponent<Target>());
 

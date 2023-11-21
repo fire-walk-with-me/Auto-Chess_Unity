@@ -10,7 +10,7 @@ public class Range : Unit
 {
     [SerializeField] GameObject projectile;
 
-    public override void attackTarget()
+    public override void AttackTarget()
     {
         //play animation
 

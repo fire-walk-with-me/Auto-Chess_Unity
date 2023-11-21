@@ -42,7 +42,6 @@ public class Sideline : MonoBehaviour
     public void InstanciateUnit(GameObject unit)
     {
         Instantiate(unit);
-        unit.GetComponent<Unit>().SetDead();
         sidelines.Add(unit);
 
         for (int i = 0; i < sidelines.Count; i++)
@@ -52,6 +51,7 @@ public class Sideline : MonoBehaviour
             buttonList[i].GetComponent<SidelineButton>().SetUnitOnButton(unit);
         }
 
+        unit.GetComponent<Unit>().SetDead();
         UpdateSidelinesButtons();
     }
 

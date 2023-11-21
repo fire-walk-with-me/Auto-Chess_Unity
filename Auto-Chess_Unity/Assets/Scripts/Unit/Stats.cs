@@ -33,7 +33,7 @@ public class Stats : MonoBehaviour
     {
         //Add a way that rarity affect stats
 
-        if (gameObject.name == "UnitMelee")//Melee
+        if (gameObject.GetComponent<Melee>())//Melee
         {
             maxHealth = Random.Range(20, 31);
             maxMana = Random.Range(10, 16);
@@ -43,7 +43,7 @@ public class Stats : MonoBehaviour
             attackDistance = Random.Range(1, 1.5f);
             defence = Random.Range(1, 4);
         }
-        else if (gameObject.name == "UnitRange")//Range
+        else if (gameObject.GetComponent<Range>())//Range
         {
             maxHealth = Random.Range(15, 21);
             maxMana = Random.Range(10, 16);

@@ -311,7 +311,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9006762839150825212}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -569,7 +569,7 @@ PrefabInstance:
     - target: {fileID: -9106337904210995862, guid: a2b4a31caec96ed4f8a1152b328c2171,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -9106337904210995862, guid: a2b4a31caec96ed4f8a1152b328c2171,
         type: 3}
@@ -636,6 +636,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 592890220700019360, guid: a2b4a31caec96ed4f8a1152b328c2171,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a2b4a31caec96ed4f8a1152b328c2171,
         type: 3}
       propertyPath: m_Name
@@ -648,18 +653,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2234995421923447144, guid: a2b4a31caec96ed4f8a1152b328c2171,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2234995421923447144, guid: a2b4a31caec96ed4f8a1152b328c2171,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2e4729ba094e5d9458c83292c9ff8c36, type: 2}
     - target: {fileID: 2544741779536303783, guid: a2b4a31caec96ed4f8a1152b328c2171,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3707983018852226925, guid: a2b4a31caec96ed4f8a1152b328c2171,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3707983018852226925, guid: a2b4a31caec96ed4f8a1152b328c2171,
         type: 3}

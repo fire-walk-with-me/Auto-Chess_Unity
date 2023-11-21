@@ -1,32 +1,47 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 
 public class PlayerAI : Player
 {
-    List<PlacementNode> startPoints = new List<PlacementNode>();
-    List<GameObject> unitsToSpawn = new List<GameObject>();
+    [SerializeField] List<GameObject> startPoints = new List<GameObject>();
+    [SerializeField] UnitPool unitPool;
+    List<Vector3> activeStartPoints = new List<Vector3>();
+    int spawnAmount;
 
-    void FindStartPoints()
+    private Vector3 FindStartPoint()
     {
-
+        return startPoints[Random.Range(0, startPoints.Count)].transform.position;
     }
 
-    void ChooseUnitsToSpawn()
+    private GameObject ChooseUnitsToSpawn()
     {
-
+        return unitPool.GetRandomUnit();
     }
 
     public void SpawnCompetitorUits()
     {
-        FindStartPoints();
-        ChooseUnitsToSpawn();
-
-        for (int i = 0; i < unitsToSpawn.Count; i++)
+        for (int i = 0; i < spawnAmount; i++)
         {
-            //Instantiate(unitsToSpawn[i], startPoints[i].position);
+            GameObject go = ChooseUnitsToSpawn();
+            Vector3 startPos = FindStartPoint();
+
+            while (activeStartPoints.Contains(startPos))
+            {
+                startPos = FindStartPoint();
+            }
+
+            activeStartPoints.Add(startPos);
+
+            startPos.y = 1;
+            Instantiate(go, startPos, Quaternion.Euler(0, 0, 0));
+            ActiveCharacters.Add(go);
         }
+
+        activeStartPoints.Clear();
+    }
+
+    public void SetSpawnAmount(int amount)
+    {
+        spawnAmount = amount;
     }
 }

@@ -51,6 +51,9 @@ public class RoundManager : MonoBehaviour
         timerText.color = Color.blue;
         yield return new WaitForSeconds(timer);
 
+        //competitor.SetSpawnAmount(playerHuman.getActiveCharacterAmount());
+        //competitor.SpawnCompetitorUits();
+
         timer = maxTimer;
         timerText.color = Color.red;
         activeRound = true;
