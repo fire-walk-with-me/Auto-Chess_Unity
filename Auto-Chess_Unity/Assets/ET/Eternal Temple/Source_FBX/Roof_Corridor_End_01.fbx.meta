@@ -1,0 +1,98 @@
+fileFormatVersion: 2
+guid: a3857d13860d6d043a951dda441f414c
+timeCreated: 1463341173
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Roof_Corridor_End_01_LOD0
+    100004: Roof_Corridor_End_01_LOD1
+    100006: Roof_Corridor_End_01_LOD2
+    100008: Ivy_Corridor_End_01
+    400000: //RootNode
+    400002: Roof_Corridor_End_01_LOD0
+    400004: Roof_Corridor_End_01_LOD1
+    400006: Roof_Corridor_End_01_LOD2
+    400008: Ivy_Corridor_End_01
+    2300000: Roof_Corridor_End_01_LOD0
+    2300002: Roof_Corridor_End_01_LOD1
+    2300004: Roof_Corridor_End_01_LOD2
+    2300006: Ivy_Corridor_End_01
+    3300000: Roof_Corridor_End_01_LOD0
+    3300002: Roof_Corridor_End_01_LOD1
+    3300004: Roof_Corridor_End_01_LOD2
+    3300006: Ivy_Corridor_End_01
+    4300000: Roof_Corridor_End_01_LOD0
+    4300002: Roof_Corridor_End_01_LOD1
+    4300004: Roof_Corridor_End_01_LOD2
+    4300006: Ivy_Corridor_End_01
+    9500000: //RootNode
+    20500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
