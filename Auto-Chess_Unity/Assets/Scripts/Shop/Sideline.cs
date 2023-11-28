@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Sideline : MonoBehaviour
 {
     [SerializeField] List<GameObject> sidelines = new List<GameObject>();
-    [SerializeField] List<Button> buttonList = new List<Button>();
+    [SerializeField] List<GameObject> spawnpoints = new List<GameObject>();
     PlayerHuman player;
     UIManager uiManager;
     const int maxSidelineSize = 6;
@@ -18,11 +18,6 @@ public class Sideline : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
         uiManager = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
-
-        for (int i = 0; i < buttonList.Count; i++)
-        {
-            buttonList[i].gameObject.SetActive(false);
-        }
     }
 
     public bool SpaceOnBench()
@@ -30,6 +25,14 @@ public class Sideline : MonoBehaviour
         if (sidelines.Count >= maxSidelineSize) return false;
 
         return true;
+    }
+
+    public void SetSidelineInactive()
+    {
+        foreach (GameObject unit in sidelines)
+        {
+            unit.GetComponent<Unit>().SetInactive();
+        }
     }
 
     public GameObject GetUnitLastPressed()
@@ -42,32 +45,13 @@ public class Sideline : MonoBehaviour
     public void InstanciateUnit(GameObject unit)
     {
         Instantiate(unit);
+        unit.gameObject.transform.position = spawnpoints[sidelines.Count].transform.position;
+        unit.GetComponent<Unit>().SetInactive();
         sidelines.Add(unit);
-
-        for (int i = 0; i < sidelines.Count; i++)
-        {
-            if (buttonList[i].gameObject.activeSelf) continue;
-
-            buttonList[i].GetComponent<SidelineButton>().SetUnitOnButton(unit);
-        }
-
-        unit.GetComponent<Unit>().SetDead();
-        UpdateSidelinesButtons();
     }
 
     public void PutUnitOnBench(GameObject unit)
     {
         sidelines.Add(unit);
-    }
-
-    public void UpdateSidelinesButtons()
-    {
-        for (int i = 0; i < sidelines.Count; i++)
-        {
-            if (buttonList[i].gameObject.activeSelf) continue;
-
-            buttonList[i].gameObject.SetActive(true);
-            buttonList[i].GetComponent<SidelineButton>().SetName();
-        }
     }
 }

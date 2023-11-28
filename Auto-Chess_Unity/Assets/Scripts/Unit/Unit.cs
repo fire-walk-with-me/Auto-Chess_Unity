@@ -9,6 +9,7 @@ public abstract class Unit : MonoBehaviour
     protected Stats stats;
     protected AI ai;
     protected bool isDead;
+    [SerializeField] protected bool active;
     [SerializeField] protected GameObject target;
 
     protected float mana;
@@ -63,6 +64,7 @@ public abstract class Unit : MonoBehaviour
         return target;
     }
     public bool IsDead() => isDead;
+    public bool Active() => active;
     public Stats Stats() => stats;
     public float Health() => health;
     public float Mana() => mana;
@@ -114,6 +116,16 @@ public abstract class Unit : MonoBehaviour
         {
             smr.enabled = true;
         }
+    }
+
+    public void SetActive()
+    {
+        active = true;
+    }
+
+    public void SetInactive()
+    {
+        active = false;
     }
 
     public void ResetPoistion()

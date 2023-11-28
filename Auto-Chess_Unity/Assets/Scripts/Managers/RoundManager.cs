@@ -15,6 +15,7 @@ public class RoundManager : MonoBehaviour
     [SerializeField] TMP_Text timerText;
     [SerializeField] UIManager uiManager;
     [SerializeField] UnitShop shop;
+    [SerializeField] Sideline sideline;
 
     private bool activeRound;
 
@@ -54,6 +55,7 @@ public class RoundManager : MonoBehaviour
         //competitor.SetSpawnAmount(playerHuman.getActiveCharacterAmount());
         //competitor.SpawnCompetitorUits();
 
+        sideline.SetSidelineInactive();
         timer = maxTimer;
         timerText.color = Color.red;
         activeRound = true;

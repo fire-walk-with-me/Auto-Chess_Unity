@@ -23,7 +23,7 @@ public class AI : MonoBehaviour
     }
     private void Update()
     {
-        if (roundManager.ActiveRound())
+        if (roundManager.ActiveRound() && unit.Active())
         {
             AIMODEL();
 
