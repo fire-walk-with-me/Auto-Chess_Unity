@@ -64,11 +64,9 @@ public class RoundManager : MonoBehaviour
 
         activeRound = false;
         
-        playerHuman.ResetCharacters();
-        competitor.ResetCharacters();
 
         CheckWinner();
-        ResetGame();
+        ResetBoard();
         round++;
         //yield return new WaitForSeconds(1);
 
@@ -84,8 +82,10 @@ public class RoundManager : MonoBehaviour
         GiveGold();
     }
 
-    private void ResetGame()
+    private void ResetBoard()
     {
         //turn all champs alive and move them to startPos
+        playerHuman.ResetCharacters();
+        competitor.ResetCharacters();
     }
 }
