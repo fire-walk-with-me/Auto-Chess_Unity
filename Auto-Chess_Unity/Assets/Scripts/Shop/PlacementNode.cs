@@ -14,7 +14,6 @@ public class PlacementNode : MonoBehaviour
     Vector3 position;
     Renderer rend;
     GameObject unitPlaced;
-    
     Color startColor;
 
     private void Start()
@@ -24,56 +23,20 @@ public class PlacementNode : MonoBehaviour
         occupied = false;
         SetOpaque();
         position = transform.position;
-        position.y = 1.1f;
+        position.y = 1.2f;
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
     }
 
     private void Update()
     {
-        //if (occupied)
-        //{
-        //    activeMaterial = materialList[1];
-        //    rend.material = activeMaterial;
-        //    startColor = rend.material.color;
-        //}
-        //else
-        //{
-        //    activeMaterial = materialList[0];
-        //    rend.material = activeMaterial;
-        //    startColor = rend.material.color;
-        //}
-
         if (roundManager.ActiveRound() && !occupied) SetTransparant();
         else SetOpaque();
-    }
-
-    private void OnMouseDown()
-    {
-        if(unitPlaced != null)
-        {
-            if (!sideline.SpaceOnBench()) return;
-
-            ChangeOccupied();
-            sideline.PutUnitOnBench(unitPlaced);
-            playerHuman.RemoveFromActiveUnits(unitPlaced);
-            unitPlaced = null;
-        }
-        if(unitPlaced == null)
-        {
-            if (sideline.GetUnitLastPressed() == null) return;
-
-            unitPlaced = sideline.GetUnitLastPressed();
-            unitPlaced.GetComponent<Unit>().SetStartingPosition(position);
-            playerHuman.AddToActiveUnits(unitPlaced);
-            ChangeOccupied();
-        }
     }
 
     private void OnMouseEnter()
     {
         if (occupied) return;
-
         rend.material.color = hoverColor;
     }
 
@@ -81,6 +44,30 @@ public class PlacementNode : MonoBehaviour
     {
         rend.material.color = startColor;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<MoveWithMouse>())
+        {
+            MoveWithMouse mwm = other.gameObject.GetComponent<MoveWithMouse>();
+            if (!mwm.CheckCollision()) return;
+
+            mwm.SetCollided(true);
+
+            if (!occupied)
+            {
+                mwm.GetComponent<Unit>().PlaceUnitOnBoard(GetPosition());
+            }
+            else
+            {
+                mwm.PlaceBack();
+            }
+
+            mwm.SetCheckCollision(false);
+        }
+    }
+    public Vector3 GetPosition() => position;
+    public bool Occpied() => occupied;
 
     public void ChangeOccupied()
     {

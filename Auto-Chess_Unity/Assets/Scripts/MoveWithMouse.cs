@@ -1,0 +1,62 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MoveWithMouse : MonoBehaviour
+{
+    Vector3 mousePos;
+    Vector3 oldObjectPos;
+    Camera cam;
+    float camZDistance;
+
+    bool checkCollision;
+    bool collided;
+
+    void Start()
+    {
+        cam = Camera.main;
+        camZDistance = cam.WorldToScreenPoint(transform.position).z;
+    }
+    private void OnMouseDown()
+    {
+        oldObjectPos = transform.position;
+    }
+    private void OnMouseDrag()
+    {
+        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, camZDistance);
+
+        transform.position = cam.ScreenToWorldPoint(mousePos);
+    }
+    private void OnMouseUp()
+    {
+        checkCollision = true;
+        StartCoroutine(CheckCollisionWithPlacementNode());
+    }
+
+    private IEnumerator CheckCollisionWithPlacementNode()
+    {
+        gameObject.transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
+
+        yield return new WaitForSeconds(0.1f);
+
+        if (!collided) PlaceBack();
+        collided = false;
+    }
+
+    public void SetCollided(bool collision)
+    {
+        collided = collision;
+    }
+
+    public void SetCheckCollision(bool collision)
+    {
+        checkCollision = collision;
+    }
+
+    public bool CheckCollision() => checkCollision;
+    public void PlaceBack()
+    {
+        transform.position = oldObjectPos;
+        collided = false;
+    }
+}

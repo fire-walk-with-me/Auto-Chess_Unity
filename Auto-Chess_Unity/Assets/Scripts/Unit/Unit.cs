@@ -94,6 +94,22 @@ public abstract class Unit : MonoBehaviour
             mana += (stats.GetStat("manaRegen") * Time.deltaTime) / 5;
     }
 
+    public void PlaceUnitOnBoard(Vector3 pos)
+    {
+        startPosition = pos;
+        gameObject.transform.position = startPosition;
+        FindObjectOfType<PlayerHuman>().AddToActiveUnits(gameObject);
+        active = true;
+        SetAlive();
+        
+    }
+
+    public void PlaceUnitOnSideLine()
+    {
+        active = false;
+        FindAnyObjectByType<PlayerHuman>().RemoveFromActiveUnits(gameObject);
+
+    }
     public void SetDead()
     {
         isDead = true;

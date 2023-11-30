@@ -31,4 +31,13 @@ public abstract class Player : MonoBehaviour
             unit.Ai().SetUnitIdle();
         }
     }
+    public void AddToActiveUnits(GameObject unit)
+    {
+        ActiveCharacters.Add(unit);
+    }
+
+    public void RemoveFromActiveUnits(GameObject unit)
+    {
+        ActiveCharacters.Remove(unit);
+    }
 }

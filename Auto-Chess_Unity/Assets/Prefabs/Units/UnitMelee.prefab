@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 1691851272082733741}
   - component: {fileID: 404936513461009177}
   - component: {fileID: 7666480410512690531}
+  - component: {fileID: 627861626217493874}
   m_Layer: 0
   m_Name: UnitMelee
   m_TagString: Player
@@ -210,8 +211,8 @@ Transform:
   m_GameObject: {fileID: 7212001639144885559}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9900007, y: 2.6000001, z: 36.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.89, y: 0.41999996, z: 36.76}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4616833676106021471}
@@ -368,6 +369,18 @@ MonoBehaviour:
   attackSpeed: 4
   attackDistance: 1.2
   defence: 5
+--- !u!114 &627861626217493874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212001639144885559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05beca69ee4eed74cacf74486b32103a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7911774033951477552
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,17 +583,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9714ff1229d23044abb677a482a8a7dc,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9714ff1229d23044abb677a482a8a7dc,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9714ff1229d23044abb677a482a8a7dc,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9714ff1229d23044abb677a482a8a7dc,
         type: 3}

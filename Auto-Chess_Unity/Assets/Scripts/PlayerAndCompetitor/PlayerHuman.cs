@@ -20,14 +20,4 @@ public class PlayerHuman : Player
     {
         return currency;
     }
-
-    public void AddToActiveUnits(GameObject unit)
-    {
-        ActiveCharacters.Add(unit);
-    }
-
-    public void RemoveFromActiveUnits(GameObject unit)
-    {
-        ActiveCharacters.Remove(unit);
-    }
 }

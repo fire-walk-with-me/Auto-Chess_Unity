@@ -13,11 +13,21 @@ public class Sideline : MonoBehaviour
     UIManager uiManager;
     const int maxSidelineSize = 6;
     GameObject unitLastPressed;
+    Vector3 pos;
+    Quaternion rot;
 
     private void Start()
     {
         player = GameObject.FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
         uiManager = GameObject.FindObjectOfType<UIManager>().GetComponent<UIManager>();
+        pos = transform.position;
+        rot = transform.rotation;
+    }
+
+    private void Update()
+    {
+      transform.position = pos;
+      transform.rotation = rot;
     }
 
     public bool SpaceOnBench()
@@ -35,13 +45,6 @@ public class Sideline : MonoBehaviour
         }
     }
 
-    public GameObject GetUnitLastPressed()
-    {
-        return unitLastPressed;
-
-        //remove unit from list
-    }
-
     public void InstanciateUnit(GameObject unit)
     {
         Instantiate(unit);
@@ -53,5 +56,24 @@ public class Sideline : MonoBehaviour
     public void PutUnitOnBench(GameObject unit)
     {
         sidelines.Add(unit);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<MoveWithMouse>())
+        {
+            MoveWithMouse mwm = collision.gameObject.GetComponent<MoveWithMouse>();
+
+            if (SpaceOnBench())
+            {
+                mwm.GetComponent<Unit>().PlaceUnitOnSideLine();
+                gameObject.transform.position = spawnpoints[sidelines.Count].transform.position;
+                sidelines.Add(collision.gameObject);
+            }
+            else
+            {
+                mwm.PlaceBack();
+            }
+        }
     }
 }
