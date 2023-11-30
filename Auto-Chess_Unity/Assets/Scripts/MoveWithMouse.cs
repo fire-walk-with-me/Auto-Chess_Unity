@@ -19,16 +19,22 @@ public class MoveWithMouse : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (gameObject.tag == "Competitor") return;
+
         oldObjectPos = transform.position;
     }
     private void OnMouseDrag()
     {
+        if (gameObject.tag == "Competitor") return;
+
         mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, camZDistance);
 
         transform.position = cam.ScreenToWorldPoint(mousePos);
     }
     private void OnMouseUp()
     {
+        if (gameObject.tag == "Competitor") return;
+
         checkCollision = true;
         StartCoroutine(CheckCollisionWithPlacementNode());
     }
