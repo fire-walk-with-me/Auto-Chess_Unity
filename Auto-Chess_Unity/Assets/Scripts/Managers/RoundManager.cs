@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class RoundManager : MonoBehaviour
 {
     [SerializeField] PlayerHuman playerHuman;
     [SerializeField] PlayerAI competitor;
-    [SerializeField] GameManager gameManager;
 
     [SerializeField] int round;
     [SerializeField] float timer;
-    [SerializeField] float maxTimer = 10;
+    const float AttackTime = 20;
+    const float PlanTime = 10;
     [SerializeField] TMP_Text timerText;
     [SerializeField] UIManager uiManager;
     [SerializeField] UnitShop shop;
@@ -44,11 +45,14 @@ public class RoundManager : MonoBehaviour
     }
 
     public bool ActiveRound() => activeRound;
+    public float Timer() => timer;
 
     private IEnumerator Round()
     {
+        //The round-loop is 10s planning, and then 20s fighting
+
         shop.UpdateShop();
-        timer = 10; //set to 30
+        timer = PlanTime;
         timerText.color = Color.blue;
         yield return new WaitForSeconds(timer);
         
@@ -57,7 +61,7 @@ public class RoundManager : MonoBehaviour
         SetCharactersOnBoardActive();
 
         sideline.SetSidelineInactive();
-        timer = maxTimer;
+        timer = AttackTime;
         timerText.color = Color.red;
         activeRound = true;
 
@@ -69,7 +73,7 @@ public class RoundManager : MonoBehaviour
         CheckWinner();
         ResetBoard();
         round++;
-        //yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1);
 
         StartCoroutine(Round());
     }
@@ -78,7 +82,7 @@ public class RoundManager : MonoBehaviour
     {
         //if one both teams still alive, check who has most champs left or something
 
-        //if(winner) giveExtragold
+        //if(winner) giveExtraGold
 
         GiveGold();
     }
@@ -91,6 +95,8 @@ public class RoundManager : MonoBehaviour
 
     private void SpawnEnemyUnits()
     {
+        //Spawn random units for the competitor team. Will match the amount of active units that the player team has.
+        if(playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount() >= 1)
         competitor.SetSpawnAmount(playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount());
         competitor.SpawnCompetitorUits();
     }

@@ -44,7 +44,7 @@ public class MoveWithMouse : MonoBehaviour
     {
         gameObject.transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
 
         if (!collided) PlaceBack();
         collided = false;

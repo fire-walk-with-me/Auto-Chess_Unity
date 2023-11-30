@@ -12,7 +12,6 @@ public class Sideline : MonoBehaviour
     PlayerHuman player;
     UIManager uiManager;
     const int maxSidelineSize = 6;
-    GameObject unitLastPressed;
     Vector3 pos;
     Quaternion rot;
 
@@ -29,6 +28,8 @@ public class Sideline : MonoBehaviour
       transform.position = pos;
       transform.rotation = rot;
     }
+
+    public List<GameObject> Sidelines() => sidelines;
 
     public bool SpaceOnBench()
     {
@@ -53,10 +54,10 @@ public class Sideline : MonoBehaviour
         sidelines.Add(unit);
     }
 
-    public void PutUnitOnBench(GameObject unit)
-    {
-        sidelines.Add(unit);
-    }
+    //public void PutUnitOnBench(GameObject unit)
+    //{
+    //    sidelines.Add(unit);
+    //}
 
     private void OnCollisionEnter(Collision collision)
     {

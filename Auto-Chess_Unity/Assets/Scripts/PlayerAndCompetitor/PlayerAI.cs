@@ -36,7 +36,7 @@ public class PlayerAI : Player
 
             startPos.y = 1;
             Instantiate(go, startPos, Quaternion.Euler(0, 0, 0));
-            ActiveCharacters.Add(go);
+            activeCharacters.Add(go);
         }
 
         activeStartPoints.Clear();

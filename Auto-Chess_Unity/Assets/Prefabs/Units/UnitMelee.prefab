@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 627861626217493874}
   m_Layer: 0
   m_Name: UnitMelee
-  m_TagString: Competitor
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,6 @@ MonoBehaviour:
   unitName: Bob
   active: 0
   target: {fileID: 0}
-  ability: {fileID: 0}
 --- !u!114 &404936513461009177
 MonoBehaviour:
   m_ObjectHideFlags: 0

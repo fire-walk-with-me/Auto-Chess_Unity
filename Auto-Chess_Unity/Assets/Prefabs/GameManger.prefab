@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8748001028747644499}
-  - component: {fileID: 1397435420915662492}
   - component: {fileID: 4916304726979953691}
+  - component: {fileID: 4359054592607805925}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -33,19 +33,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1397435420915662492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6512094684703999738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e3136c6c0c45947ae71697e555c282, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roundManager: {fileID: 4916304726979953691}
 --- !u!114 &4916304726979953691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +47,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHuman: {fileID: 0}
   competitor: {fileID: 0}
-  gameManager: {fileID: 1397435420915662492}
   round: 0
   timer: 0
   timerText: {fileID: 0}
+  uiManager: {fileID: 0}
+  shop: {fileID: 0}
+  sideline: {fileID: 0}
+--- !u!114 &4359054592607805925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6512094684703999738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316fbdf19983ca843a71443050234e19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundManager: {fileID: 4916304726979953691}
+  human: {fileID: 0}
+  ai: {fileID: 0}
+  sideline: {fileID: 0}

@@ -1,20 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
+
+/// <summary>
+/// This is a singleton-script with static information accessable from anywhere
+/// write "GameInfo.Info." and one of the functions below.
+///e.g GameInfo.Info.GetRoundTimer();
+///Feel free to add more Get-functions if anything you need is missing
+/// </summary>
 public class GameInfo : MonoBehaviour
 {
-    
+    public static GameInfo Info;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] RoundManager roundManager;
+    [SerializeField] PlayerHuman human;
+    [SerializeField] PlayerAI ai;
+    [SerializeField] Sideline sideline;
+
+    private void Awake()
     {
-        
+        Info = GetComponent<GameInfo>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float GetRoundTimer() => roundManager.Timer();
+    public bool GetIsRoundActive() => roundManager.ActiveRound();
+    public int GetGoldCount() => human.GetGoldCount();
+    public int GetHumanActiveCharacterAmount() => human.GetActiveCharacterAmount();
+    public List<GameObject> GetHumanActiveCharacterList() => human.GetCharacters();
+    public int GetAIActiveCharacterAmount() => ai.GetActiveCharacterAmount();
+    public List<GameObject> GetAIActiveCharacterList() => ai.GetCharacters();
+    public bool GetIfSpaceOnSideline() => sideline.SpaceOnBench();
+    public List<GameObject> GetCharactersOnSideline() => sideline.Sidelines();
+
 }

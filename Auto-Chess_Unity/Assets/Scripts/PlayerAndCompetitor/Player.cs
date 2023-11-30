@@ -8,21 +8,25 @@ public abstract class Player : MonoBehaviour
 {
     [SerializeField] protected int characterLimit;
     [SerializeField] protected float health;
-    [SerializeField] protected List<GameObject> ActiveCharacters;
+    [SerializeField] protected List<GameObject> activeCharacters = new List<GameObject>();
 
+    private void Start()
+    {
+        activeCharacters.Clear();
+    }
     public int GetActiveCharacterAmount()
     {
-        return ActiveCharacters.Count;
+        return activeCharacters.Count;
     }
 
     public List<GameObject> GetCharacters()
     {
-        return ActiveCharacters;
+        return activeCharacters;
     }
 
     public void ResetCharacters()
     {
-        foreach (GameObject character in ActiveCharacters) 
+        foreach (GameObject character in activeCharacters) 
         {
             Unit unit = character.GetComponent<Unit>();
 
@@ -34,26 +38,28 @@ public abstract class Player : MonoBehaviour
     }
     public void AddToActiveUnits(GameObject unit)
     {
-        ActiveCharacters.Add(unit);
+        activeCharacters.Add(unit);
     }
 
     public void RemoveFromActiveUnits(GameObject unit)
     {
-        ActiveCharacters.Remove(unit);
+        activeCharacters.Remove(unit);
     }
 
     public void SetCharacterOnBoardActive()
     {
-        foreach (GameObject character in ActiveCharacters)
+        foreach (GameObject character in activeCharacters)
         {
-            character.GetComponent<Unit>().SetActive();
+            Unit unit = character.GetComponent<Unit>();
+            unit.GetComponent<Unit>().SetActive();
         }
     }
     public void SetCharacterOnBoardInctive()
     {
-        foreach (GameObject character in ActiveCharacters)
+        foreach (GameObject character in activeCharacters)
         {
-            character.GetComponent<Unit>().SetInactive();
+            Unit unit = character.GetComponent<Unit>();
+            unit.GetComponent<Unit>().SetInactive();
         }
     }
 }

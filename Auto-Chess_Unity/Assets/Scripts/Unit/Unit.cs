@@ -15,20 +15,12 @@ public abstract class Unit : MonoBehaviour
     protected float mana;
     protected float health;
     protected healthBar healthBar;
-    [SerializeField] protected Ability ability;
 
     protected Vector3 startPosition;
 
-    enum Rarity
-    {
-        common,
-        rare,
-        epic
-    }
-
     void Start()
     {
-        stats = GetComponent<Stats>();
+        stats = gameObject.GetComponent<Stats>();
         health = stats.GetStat("maxHealth");
         mana = stats.GetStat("maxMana");
         healthBar = gameObject.GetComponentInChildren<healthBar>();
@@ -74,7 +66,9 @@ public abstract class Unit : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        health -= (damage - stats.GetStat("defence"));
+        float damageToUnit = damage - stats.GetStat("defence");
+        if (damageToUnit <= 0) damageToUnit = 1;
+        health -= (damageToUnit);
         healthBar.SetHealth(health);
 
         if (!isDead && health <= 0)
