@@ -10,7 +10,7 @@ public abstract class Player : MonoBehaviour
     [SerializeField] protected float health;
     [SerializeField] protected List<GameObject> ActiveCharacters;
 
-    public int getActiveCharacterAmount()
+    public int GetActiveCharacterAmount()
     {
         return ActiveCharacters.Count;
     }
@@ -29,6 +29,7 @@ public abstract class Player : MonoBehaviour
             unit.SetAlive();
             unit.ResetPoistion();
             unit.Ai().SetUnitIdle();
+            unit.SetInactive();
         }
     }
     public void AddToActiveUnits(GameObject unit)
@@ -39,5 +40,20 @@ public abstract class Player : MonoBehaviour
     public void RemoveFromActiveUnits(GameObject unit)
     {
         ActiveCharacters.Remove(unit);
+    }
+
+    public void SetCharacterOnBoardActive()
+    {
+        foreach (GameObject character in ActiveCharacters)
+        {
+            character.GetComponent<Unit>().SetActive();
+        }
+    }
+    public void SetCharacterOnBoardInctive()
+    {
+        foreach (GameObject character in ActiveCharacters)
+        {
+            character.GetComponent<Unit>().SetInactive();
+        }
     }
 }

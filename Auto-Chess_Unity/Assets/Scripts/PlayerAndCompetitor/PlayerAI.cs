@@ -25,6 +25,8 @@ public class PlayerAI : Player
             GameObject go = ChooseUnitsToSpawn();
             Vector3 startPos = FindStartPoint();
 
+            if (activeStartPoints.Count >= startPoints.Count) return;
+
             while (activeStartPoints.Contains(startPos))
             {
                 startPos = FindStartPoint();

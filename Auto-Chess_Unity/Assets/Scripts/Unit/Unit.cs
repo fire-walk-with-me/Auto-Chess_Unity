@@ -101,7 +101,7 @@ public abstract class Unit : MonoBehaviour
         FindObjectOfType<PlayerHuman>().AddToActiveUnits(gameObject);
         active = true;
         SetAlive();
-        
+
     }
 
     public void PlaceUnitOnSideLine()

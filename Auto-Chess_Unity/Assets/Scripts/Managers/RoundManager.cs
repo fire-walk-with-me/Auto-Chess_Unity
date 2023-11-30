@@ -51,9 +51,10 @@ public class RoundManager : MonoBehaviour
         timer = 10; //set to 30
         timerText.color = Color.blue;
         yield return new WaitForSeconds(timer);
-
-        //competitor.SetSpawnAmount(playerHuman.getActiveCharacterAmount());
-        //competitor.SpawnCompetitorUits();
+        
+        SpawnEnemyUnits();
+        yield return new WaitForEndOfFrame();
+        SetCharactersOnBoardActive();
 
         sideline.SetSidelineInactive();
         timer = maxTimer;
@@ -80,6 +81,18 @@ public class RoundManager : MonoBehaviour
         //if(winner) giveExtragold
 
         GiveGold();
+    }
+
+    private void SetCharactersOnBoardActive()
+    {
+        competitor.SetCharacterOnBoardActive();
+        playerHuman.SetCharacterOnBoardActive();
+    }
+
+    private void SpawnEnemyUnits()
+    {
+        competitor.SetSpawnAmount(playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount());
+        competitor.SpawnCompetitorUits();
     }
 
     private void ResetBoard()
