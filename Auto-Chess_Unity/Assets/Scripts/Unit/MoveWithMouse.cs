@@ -34,7 +34,7 @@ public class MoveWithMouse : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if (FindObjectOfType<RoundManager>().ActiveRound() || gameObject.tag == "Competitor") return;
+        if (gameObject.tag == "Competitor") return;
 
         checkCollision = true;
         StartCoroutine(CheckCollisionWithPlacementNode());

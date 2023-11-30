@@ -73,7 +73,6 @@ public class RoundManager : MonoBehaviour
         CheckWinner();
         ResetBoard();
         round++;
-        yield return new WaitForSeconds(1);
 
         StartCoroutine(Round());
     }
