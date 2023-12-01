@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 /// <summary>
 /// This script is the main script for the AI-assignment.
 /// Design an AI-model of your within the AIMODEL()-method to choose which behaviour the units should take.
 /// The update-function will call AIMODEL() each frame to choose a behaviour, and then execute that behaviour with the "activeBehaviour.DoAction()" method.
 /// </summary>
+/// 
 public class AI : MonoBehaviour
 {
     [SerializeField] AIBehaviour activeBehaviour;

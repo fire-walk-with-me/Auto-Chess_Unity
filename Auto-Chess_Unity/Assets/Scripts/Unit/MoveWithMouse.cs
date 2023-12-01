@@ -49,7 +49,7 @@ public class MoveWithMouse : MonoBehaviour
         if (!collided) PlaceBack();
         collided = false;
         GameInfo.Info.GetSideline().RemoveUnitFromSideline(gameObject);
-       // gameObject.GetComponent<Unit>().SetActive();
+       //gameObject.GetComponent<Unit>().SetActive();
     }
 
     public void SetCollided(bool collision)

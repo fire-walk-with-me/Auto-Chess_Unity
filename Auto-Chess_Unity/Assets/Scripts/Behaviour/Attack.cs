@@ -35,7 +35,6 @@ public class Attack : AIBehaviour
 
     private IEnumerator AttackEnemy()
     {
-        //Debug.Log(gameObject + " attacks for " + attackDamage + " Dmg");
         Unit enemy = thisUnit.GetTarget().GetComponent<Unit>();
         if(enemy.IsDead()) thisUnit.RemoveTarget();
 
