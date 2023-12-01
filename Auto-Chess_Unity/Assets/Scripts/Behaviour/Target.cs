@@ -12,6 +12,7 @@ public class Target : AIBehaviour
     [SerializeField] GameObject closestTarget;
     private void Start()
     {
+        targetList.Clear();
         if(gameObject.tag == "Player") belongsToPlayer = true;
     }
 

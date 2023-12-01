@@ -54,10 +54,16 @@ public class Sideline : MonoBehaviour
         sidelines.Add(unit);
     }
 
-    //public void PutUnitOnBench(GameObject unit)
-    //{
-    //    sidelines.Add(unit);
-    //}
+    public void PutUnitOnBench(GameObject unit)
+    {
+        sidelines.Add(unit);
+    }
+
+    public void RemoveUnitFromSideline(GameObject unit)
+    {
+        if (!sidelines.Contains(unit)) return;
+        sidelines.Remove(unit);
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

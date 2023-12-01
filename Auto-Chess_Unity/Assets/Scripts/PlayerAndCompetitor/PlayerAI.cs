@@ -34,12 +34,12 @@ public class PlayerAI : Player
 
             activeStartPoints.Add(startPos);
 
-            startPos.y = 1;
-            Instantiate(go, startPos, Quaternion.Euler(0, 0, 0));
-            activeCharacters.Add(go);
+            startPos.y = 1.2f;
+            GameObject unit = Instantiate(go, startPos, Quaternion.identity);
+            activeCharacters.Add(unit);
+            go.GetComponent<Unit>().SetActive();
+            go.GetComponent<Unit>().SetStartingPosition(startPos);
         }
-
-        activeStartPoints.Clear();
     }
 
     public void SetSpawnAmount(int amount)

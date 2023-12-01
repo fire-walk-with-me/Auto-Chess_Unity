@@ -11,7 +11,7 @@ public class RoundManager : MonoBehaviour
 
     [SerializeField] int round;
     [SerializeField] float timer;
-    const float AttackTime = 20;
+    const float AttackTime = 30;
     const float PlanTime = 10;
     [SerializeField] TMP_Text timerText;
     [SerializeField] UIManager uiManager;
@@ -49,7 +49,7 @@ public class RoundManager : MonoBehaviour
 
     private IEnumerator Round()
     {
-        //The round-loop is 10s planning, and then 20s fighting
+        //The round-loop is 10s planning, and then 30s fighting
 
         shop.UpdateShop();
         timer = PlanTime;
@@ -95,8 +95,11 @@ public class RoundManager : MonoBehaviour
     private void SpawnEnemyUnits()
     {
         //Spawn random units for the competitor team. Will match the amount of active units that the player team has.
-        if(playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount() >= 1)
-        competitor.SetSpawnAmount(playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount());
+        int spawnAount;
+
+        if(playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount() < 1) spawnAount = 1;
+        else spawnAount = playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount();
+        competitor.SetSpawnAmount(spawnAount);
         competitor.SpawnCompetitorUits();
     }
 
