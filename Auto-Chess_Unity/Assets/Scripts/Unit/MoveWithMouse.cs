@@ -28,7 +28,7 @@ public class MoveWithMouse : MonoBehaviour
     {
         if (FindObjectOfType<RoundManager>().ActiveRound() || gameObject.tag == "Competitor") return;
 
-        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, camZDistance);
+        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 32f);
 
         transform.position = cam.ScreenToWorldPoint(mousePos);
     }

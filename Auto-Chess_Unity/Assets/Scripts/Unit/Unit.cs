@@ -31,11 +31,10 @@ public abstract class Unit : MonoBehaviour
     private void Update()
     {
         RegenrateMana();
-    }
-
-    public virtual void AttackTarget()
-    {
-
+        if (!isDead && health <= 0)
+        {
+            SetDead();
+        }
     }
 
     public void SetStartingPosition(Vector3 startPos)

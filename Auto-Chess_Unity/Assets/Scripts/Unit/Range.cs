@@ -8,13 +8,4 @@ using UnityEngine.UIElements.Experimental;
 
 public class Range : Unit
 {
-    [SerializeField] GameObject projectile;
-
-    public override void AttackTarget()
-    {
-        //play animation
-
-        //GameObject p = Instantiate(projectile, gameObject.transform.position, Quaternion.identity);
-        //p.GetComponent<projectile>().ShootTarget(target);
-    }
 }

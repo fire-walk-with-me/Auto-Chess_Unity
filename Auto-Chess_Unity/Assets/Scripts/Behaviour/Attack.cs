@@ -36,8 +36,10 @@ public class Attack : AIBehaviour
     private IEnumerator AttackEnemy()
     {
         //Debug.Log(gameObject + " attacks for " + attackDamage + " Dmg");
-        thisUnit.GetTarget().GetComponent<Unit>().TakeDamage(attackDamage);
-        thisUnit.AttackTarget();
+        Unit enemy = thisUnit.GetTarget().GetComponent<Unit>();
+        if(enemy.IsDead()) thisUnit.RemoveTarget();
+
+        enemy.TakeDamage(attackDamage);
         yield return null;
     }
 }

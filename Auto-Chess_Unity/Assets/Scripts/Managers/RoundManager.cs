@@ -12,7 +12,7 @@ public class RoundManager : MonoBehaviour
     [SerializeField] int round;
     [SerializeField] float timer;
     const float AttackTime = 30;
-    const float PlanTime = 10;
+    const float PlanTime = 15;
     [SerializeField] TMP_Text timerText;
     [SerializeField] UIManager uiManager;
     [SerializeField] UnitShop shop;

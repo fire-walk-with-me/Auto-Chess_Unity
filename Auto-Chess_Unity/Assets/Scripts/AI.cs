@@ -49,7 +49,7 @@ public class AI : MonoBehaviour
         //create an AI model that chooses behaviour, e.g "if(statment == true) SetActiveBehaviour(gameObject.GetComponent<Move>());"
         //to get a units stats you can use the following function: "unit.Stats().GetStat("attackDistance")"
 
-        if (!unit.GetTarget() || deadTarget()) SetActiveBehaviour(gameObject.GetComponent<Target>());
+        if (!unit.GetTarget()) SetActiveBehaviour(gameObject.GetComponent<Target>());
 
         else if (Vector3.Distance(gameObject.transform.position, unit.GetTarget().transform.position) - 0.5f > unit.Stats().GetStat("attackDistance"))
             SetActiveBehaviour(gameObject.GetComponent<Move>());
