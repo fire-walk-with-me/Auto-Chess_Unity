@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //This is an abstract scripts that holds inforamtion that both the human player and the computer player utilizes.
-
 public abstract class Player : MonoBehaviour
 {
     [SerializeField] protected int characterLimit;
@@ -19,7 +18,7 @@ public abstract class Player : MonoBehaviour
         return activeCharacters.Count;
     }
 
-    public List<GameObject> GetCharacters()
+    public List<GameObject> GetActiveCharacters()
     {
         return activeCharacters;
     }

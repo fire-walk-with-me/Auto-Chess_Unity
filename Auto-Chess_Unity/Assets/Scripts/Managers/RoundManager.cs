@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class RoundManager : MonoBehaviour
 {
     [SerializeField] PlayerHuman playerHuman;
-    [SerializeField] PlayerAI competitor;
+    [SerializeField] PlayerAI playerComputer;
 
     [SerializeField] int round;
     [SerializeField] float timer;
@@ -19,6 +19,8 @@ public class RoundManager : MonoBehaviour
     [SerializeField] Sideline sideline;
 
     private bool activeRound;
+    private bool computerTeamDead;
+    private bool playerTeamDead;
 
     void Start()
     {
@@ -31,6 +33,10 @@ public class RoundManager : MonoBehaviour
     {
         timer -= Time.deltaTime;
         timerText.text = timer.ToString("0");
+
+        if (activeRound) CheckBoardStatus();
+
+        if(activeRound && timer <= 0) EndOfRound();
     }
 
     private void GiveGold()
@@ -55,7 +61,7 @@ public class RoundManager : MonoBehaviour
         timer = PlanTime;
         timerText.color = Color.blue;
         yield return new WaitForSeconds(timer);
-        
+
         SpawnEnemyUnits();
         yield return new WaitForEndOfFrame();
         SetCharactersOnBoardActive();
@@ -64,11 +70,11 @@ public class RoundManager : MonoBehaviour
         timer = AttackTime;
         timerText.color = Color.red;
         activeRound = true;
+    }
 
-        yield return new WaitForSeconds(timer);
-
+    private void EndOfRound()
+    {
         activeRound = false;
-        
 
         CheckWinner();
         ResetBoard();
@@ -77,36 +83,57 @@ public class RoundManager : MonoBehaviour
         StartCoroutine(Round());
     }
 
+    private void CheckBoardStatus()
+    {
+        computerTeamDead = true;
+
+        foreach (GameObject go in playerComputer.GetActiveCharacters())
+        {
+            if (!go.GetComponent<Unit>().IsDead()) computerTeamDead = false;
+        }
+
+        playerTeamDead = true;
+
+        foreach (GameObject go in playerHuman.GetActiveCharacters())
+        {
+            if (!go.GetComponent<Unit>().IsDead()) playerTeamDead = false;
+        }
+
+        if (computerTeamDead || playerTeamDead)
+        {
+            if (timer > 5) timer = 5;
+        }
+    }
+
     private void CheckWinner()
     {
-        //if one both teams still alive, check who has most champs left or something
+        // If playerr team wins, get extra gold
 
-        //if(winner) giveExtraGold
-
+        if (computerTeamDead) GiveGold();
         GiveGold();
     }
 
     private void SetCharactersOnBoardActive()
     {
-        competitor.SetCharacterOnBoardActive();
+        playerComputer.SetCharacterOnBoardActive();
         playerHuman.SetCharacterOnBoardActive();
     }
 
     private void SpawnEnemyUnits()
     {
         //Spawn random units for the competitor team. Will match the amount of active units that the player team has.
-        int spawnAount;
+        int spawnAmount;
 
-        if(playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount() < 1) spawnAount = 1;
-        else spawnAount = playerHuman.GetActiveCharacterAmount() - competitor.GetActiveCharacterAmount();
-        competitor.SetSpawnAmount(spawnAount);
-        competitor.SpawnCompetitorUits();
+        if (playerHuman.GetActiveCharacterAmount() - playerComputer.GetActiveCharacterAmount() < 1) spawnAmount = 1;
+        else spawnAmount = playerHuman.GetActiveCharacterAmount() - playerComputer.GetActiveCharacterAmount();
+        playerComputer.SetSpawnAmount(spawnAmount);
+        playerComputer.SpawnCompetitorUits();
     }
 
     private void ResetBoard()
     {
         //turn all champs alive and move them to startPos
         playerHuman.ResetCharacters();
-        competitor.ResetCharacters();
+        playerComputer.ResetCharacters();
     }
 }

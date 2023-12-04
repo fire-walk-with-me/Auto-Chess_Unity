@@ -211,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 7212001639144885559}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.89, y: 5.03, z: 36.76}
+  m_LocalPosition: {x: 3.9900007, y: 5.03, z: 36.76}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -334,6 +334,7 @@ MonoBehaviour:
   unitName: Bob
   active: 0
   target: {fileID: 0}
+  startPosition: {x: -13.75, y: 1.2, z: -15}
 --- !u!114 &7666480410512690531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,7 +571,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1affd304b457b44095a1bae9bed4681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
 --- !u!1001 &4583333045316265715
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//this script will find the closest enemy to the unit who uses this behaviour
+//this script will find the closest active enemy to the unit who uses this behaviour, and set it as a target
 
 public class Target : AIBehaviour
 {
@@ -13,7 +13,7 @@ public class Target : AIBehaviour
     private void Start()
     {
         targetList.Clear();
-        if(gameObject.tag == "Player") belongsToPlayer = true;
+        if (gameObject.tag == "Player") belongsToPlayer = true;
     }
 
     public override void DoAction()
@@ -24,21 +24,31 @@ public class Target : AIBehaviour
     }
 
     private GameObject getClosestEnemy()
-    { 
+    {
         if (belongsToPlayer)
         {
-            targetList = competitor.GetCharacters();
+            targetList = competitor.GetActiveCharacters();
         }
         else
         {
-            targetList = player.GetCharacters();
+            targetList = player.GetActiveCharacters();
         }
-        closestTarget = targetList[0];
 
-        foreach(GameObject enemy in targetList)
+        closestTarget = null;
+
+        for (int i = 0; i < targetList.Count; i++)
+        {
+            if (targetList[i].GetComponent<Unit>().IsDead()) continue;
+
+            closestTarget = targetList[i];
+        }
+
+        if (closestTarget == null) return closestTarget;
+
+        foreach (GameObject enemy in targetList)
         {
             if (enemy.GetComponent<Unit>().IsDead()) continue;
-            if(Vector3.Distance(thisUnit.transform.position, enemy.transform.position) <= Vector3.Distance(thisUnit.transform.position, closestTarget.transform.position))
+            if (Vector3.Distance(thisUnit.transform.position, enemy.transform.position) <= Vector3.Distance(thisUnit.transform.position, closestTarget.transform.position))
                 closestTarget = enemy;
         }
         return closestTarget;

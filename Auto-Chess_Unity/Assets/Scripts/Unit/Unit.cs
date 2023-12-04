@@ -16,7 +16,7 @@ public abstract class Unit : MonoBehaviour
     protected float health;
     protected healthBar healthBar;
 
-    protected Vector3 startPosition;
+    [SerializeField] protected Vector3 startPosition;
 
     void Start()
     {
@@ -39,7 +39,7 @@ public abstract class Unit : MonoBehaviour
 
     public void SetStartingPosition(Vector3 startPos)
     {
-        startPos = startPosition;
+        startPosition = startPos;
     }
 
     public void SetTarget(GameObject target)
@@ -146,14 +146,14 @@ public abstract class Unit : MonoBehaviour
     {
         if (!ai) ai = gameObject.GetComponent<AI>();
 
-        foreach (GameObject go in ai.GetAIPlayer().GetCharacters())
+        foreach (GameObject go in ai.GetAIPlayer().GetActiveCharacters())
         {
             Unit otherUnit = go.GetComponent<Unit>();
             if (otherUnit.GetTarget() == thisUnit)
                 otherUnit.RemoveTarget();
         }
 
-        foreach (GameObject go in ai.GetHumanPlayer().GetCharacters())
+        foreach (GameObject go in ai.GetHumanPlayer().GetActiveCharacters())
         {
             Unit unit = go.GetComponent<Unit>();
             if (unit.GetTarget() == thisUnit)

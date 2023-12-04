@@ -8242,7 +8242,7 @@ GameObject:
   - component: {fileID: 1757213190}
   - component: {fileID: 1757213189}
   m_Layer: 0
-  m_Name: Competitor
+  m_Name: PlayerComputer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9520,7 +9520,7 @@ GameObject:
   - component: {fileID: 1953965949}
   - component: {fileID: 1953965950}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerHuman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10468,6 +10468,11 @@ PrefabInstance:
       propertyPath: playerHuman
       value: 
       objectReference: {fileID: 1953965950}
+    - target: {fileID: 4916304726979953691, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
+        type: 3}
+      propertyPath: playerComputer
+      value: 
+      objectReference: {fileID: 1757213189}
     - target: {fileID: 6512094684703999738, guid: cb6d12ccbc16a0a4fa49a0edb0e4aa06,
         type: 3}
       propertyPath: m_Name
