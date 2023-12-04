@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ShopButton : MonoBehaviour
+public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     Unit unitOnButton;
     GameObject unit;
@@ -18,14 +19,15 @@ public class ShopButton : MonoBehaviour
         unitShop = FindObjectOfType<UnitShop>().GetComponent<UnitShop>();
     }
 
-    private void OnMouseEnter()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        string s = unitOnButton.UnitName() + "<br>Health: " + unitOnButton.Stats().GetStat("MaxHealth") + "<br>Attack: " + unitOnButton.Stats().GetStat("Attack");
-        manager.UpdateInfoText(s);
+        unitOnButton.Stats().RandomizeStats();
+        manager.UpdateInfoText(unitOnButton.Stats().GetStat("Attack").ToString(), unitOnButton.Stats().GetStat("AttackDistance").ToString(), unitOnButton.Stats().GetStat("maxHealth").ToString(), unitOnButton.Stats().GetStat("Defence").ToString());
     }
-    private void OnMouseExit()
+
+    public void OnPointerExit(PointerEventData eventData)
     {
-        manager.UpdateInfoText("Information");
+        manager.UpdateInfoText("", "", "", "");
     }
 
     public void PressButton()

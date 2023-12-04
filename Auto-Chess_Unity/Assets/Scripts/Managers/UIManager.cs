@@ -7,8 +7,12 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text infoBarText;
     [SerializeField] TMP_Text currencyText;
+    [SerializeField] TMP_Text infoBarAttackText;
+    [SerializeField] TMP_Text infoBarAttackDisText;
+    [SerializeField] TMP_Text infoBarHealthText;
+    [SerializeField] TMP_Text infoBarDefenceText;
+
     Sideline sideline;
     PlayerHuman player;
 
@@ -21,7 +25,7 @@ public class UIManager : MonoBehaviour
         player = FindObjectOfType<PlayerHuman>().GetComponent<PlayerHuman>();
         sideline = FindObjectOfType<Sideline>().GetComponent<Sideline>();
         UpdateCurrencyText();
-        UpdateInfoText("Character info will be displayed here");
+        UpdateInfoText("", "", "", "");
     }
 
     public void UpdateCurrencyText()
@@ -30,9 +34,12 @@ public class UIManager : MonoBehaviour
         currencyText.text = "Gold " + currency.ToString();
     }
 
-    public void UpdateInfoText(string info)
+    public void UpdateInfoText(string attack, string attackDis, string helath, string defence)
     {
-        infoBarText.text = info;
+        infoBarAttackText.text = "Attack: " + attack;
+        infoBarAttackDisText.text = "Attack Dist: " + attackDis;
+        infoBarHealthText.text = "Health: " + helath;
+        infoBarDefenceText.text = "Defence: " + defence;
     }
 
     public void UpdateUnitShop(List<GameObject> NewUnitsToDisplay)

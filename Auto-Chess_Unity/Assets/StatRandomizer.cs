@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Stats : MonoBehaviour
+public class StatRandomizer : MonoBehaviour
 {
     [SerializeField] float maxHealth;
     [SerializeField] float maxMana;
@@ -11,30 +12,14 @@ public class Stats : MonoBehaviour
     [SerializeField] float attackSpeed;
     [SerializeField] float attackDistance;
     [SerializeField] float defence;
-    bool statsCreated;
 
+    ShopButton shopButton;
     private void Start()
     {
-        if (!statsCreated)
-            RandomizeStats();
+        shopButton = gameObject.GetComponent<ShopButton>();
     }
-
-    public float GetStat(string stat)
-    {
-        if (stat == "maxHealth") return maxHealth;
-        if (stat == "maxMana") return maxMana;
-        if (stat == "manaRegen") return manaRegen;
-        if (stat == "attack") return attack;
-        if (stat == "attackSpeed") return attackSpeed;
-        if (stat == "attackDistance") return attackDistance;
-        if (stat == "defence") return defence;
-        else return 0;
-    }
-
-
     public void RandomizeStats()
     {
-        statsCreated = true;
 
         if (gameObject.GetComponent<Melee>())//Melee
         {
