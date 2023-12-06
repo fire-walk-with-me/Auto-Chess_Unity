@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitShop : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class UnitShop : MonoBehaviour
         return pool.GetRandomPool();
     }
 
-    public bool BuyUnit(GameObject unit, int unitCost)
+    public bool BuyUnit(GameObject unit, int unitCost, StatRandomizer statRan)
     {
         if(!unit) return false;
 
@@ -30,7 +31,7 @@ public class UnitShop : MonoBehaviour
         {
             ph.DecreaceGold(unitCost);
             shopUI.UpdateCurrencyText();
-            sideline.InstanciateUnit(unit);
+            sideline.InstanciateUnit(unit, statRan);
             return true;
         }
         return false;

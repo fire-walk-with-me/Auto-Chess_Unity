@@ -16,7 +16,6 @@ public class UIManager : MonoBehaviour
     Sideline sideline;
     PlayerHuman player;
 
-
     [SerializeField] List<Button> buttonList = new List<Button>();
     List<GameObject> unitsInStoreList = new List<GameObject>();
 
@@ -52,6 +51,7 @@ public class UIManager : MonoBehaviour
             buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].GetComponent<Unit>().UnitName();
             buttonList[i].gameObject.GetComponent<ShopButton>().UpdateUnitOnButton(unitsInStoreList[i]);
             buttonList[i].gameObject.GetComponent<ShopButton>().SetSold(false);
+            buttonList[i].gameObject.GetComponent<StatRandomizer>().RandomizeStats();
         }
     }
 }

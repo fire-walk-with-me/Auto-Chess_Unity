@@ -12,17 +12,18 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     UIManager manager;
     UnitShop unitShop;
     bool sold;
+    StatRandomizer statRan;
 
     private void Start()
     {
         manager = FindObjectOfType<UIManager>().GetComponent<UIManager>();
         unitShop = FindObjectOfType<UnitShop>().GetComponent<UnitShop>();
+        statRan = gameObject.GetComponent<StatRandomizer>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        unitOnButton.Stats().RandomizeStats();
-        manager.UpdateInfoText(unitOnButton.Stats().GetStat("Attack").ToString(), unitOnButton.Stats().GetStat("AttackDistance").ToString(), unitOnButton.Stats().GetStat("maxHealth").ToString(), unitOnButton.Stats().GetStat("Defence").ToString());
+        manager.UpdateInfoText(statRan.GetAttack().ToString("0"), statRan.GetAttackDistance().ToString("0"), statRan.GetMaxHealth().ToString("0"), statRan.GetDefence().ToString("0"));
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -34,7 +35,7 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     {
         if (sold) return;
 
-        if (unitShop.BuyUnit(unit, 2))
+        if (unitShop.BuyUnit(unit, 2, statRan))
         {
             gameObject.GetComponentInChildren<TMP_Text>().text = "SOLD";
             sold = true;
@@ -50,5 +51,10 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void SetSold(bool s)
     {
         sold = s;
+    }
+
+    public GameObject GetUnitOnButton()
+    {
+        return unit;
     }
 }

@@ -11,13 +11,6 @@ public class Stats : MonoBehaviour
     [SerializeField] float attackSpeed;
     [SerializeField] float attackDistance;
     [SerializeField] float defence;
-    bool statsCreated;
-
-    private void Start()
-    {
-        if (!statsCreated)
-            RandomizeStats();
-    }
 
     public float GetStat(string stat)
     {
@@ -30,12 +23,27 @@ public class Stats : MonoBehaviour
         if (stat == "defence") return defence;
         else return 0;
     }
+    public float GetMaxHealth() => maxHealth;
+    public float GetMaxMana() => maxMana;
+    public float GetManaRegen() => manaRegen;
+    public float GetAttack() => attack;
+    public float GetAttacKDistance() => attackDistance;
+    public float GetAttackSpeed() => attackSpeed;
+    public float GetDefence() => defence;
 
-
-    public void RandomizeStats()
+    public void SetStats(float MaxHealth, float MaxMana, float ManaRegen, float Attack, float AttackSpeed, float AttackDistance, float Defence)
     {
-        statsCreated = true;
+        maxHealth = MaxHealth;
+        maxMana = MaxMana; 
+        manaRegen = ManaRegen;
+        attack = Attack;
+        attackSpeed = AttackSpeed;
+        attackDistance = AttackDistance;
+        defence = Defence;
+    }
 
+    public void RandomizeStats() //used for enemy characters
+    {
         if (gameObject.GetComponent<Melee>())//Melee
         {
             maxHealth = Random.Range(20, 31);

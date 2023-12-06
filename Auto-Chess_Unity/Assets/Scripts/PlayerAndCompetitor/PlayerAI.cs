@@ -37,8 +37,9 @@ public class PlayerAI : Player
             startPos.y = 1.2f;
             GameObject unit = Instantiate(go, startPos, Quaternion.identity);
             activeCharacters.Add(unit);
-            go.GetComponent<Unit>().SetActive();
-            go.GetComponent<Unit>().SetStartingPosition(startPos);
+            unit.GetComponent<Stats>().RandomizeStats();
+            unit.GetComponent<Unit>().SetActive();
+            unit.GetComponent<Unit>().SetStartingPosition(startPos);
         }
     }
 

@@ -46,11 +46,12 @@ public class Sideline : MonoBehaviour
         }
     }
 
-    public void InstanciateUnit(GameObject unit)
+    public void InstanciateUnit(GameObject unit, StatRandomizer statRan)
     {
         Instantiate(unit);
         unit.gameObject.transform.position = spawnpoints[sidelines.Count].transform.position;
         unit.GetComponent<Unit>().SetInactive();
+        unit.GetComponent<Stats>().SetStats(statRan.GetMaxHealth(), statRan.GetMaxMana(), statRan.GetManaRegen(), statRan.GetAttack(), statRan.GetAttackSpeed(), statRan.GetAttackDistance(), statRan.GetDefence());
         sidelines.Add(unit);
     }
 
