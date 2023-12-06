@@ -37,11 +37,13 @@ public abstract class Player : MonoBehaviour
     }
     public void AddToActiveUnits(GameObject unit)
     {
+        if(!activeCharacters.Contains(unit))
         activeCharacters.Add(unit);
     }
 
     public void RemoveFromActiveUnits(GameObject unit)
     {
+        if(activeCharacters.Contains(unit))
         activeCharacters.Remove(unit);
     }
 

@@ -30,7 +30,7 @@ public class PlacementNode : MonoBehaviour
 
     private void Update()
     {
-        if (roundManager.ActiveRound() && !occupied) SetTransparant();
+        if (roundManager.ActiveRound()) SetTransparant();
         else SetOpaque();
     }
 
@@ -57,6 +57,8 @@ public class PlacementNode : MonoBehaviour
             if (!occupied)
             {
                 mwm.GetComponent<Unit>().PlaceUnitOnBoard(GetPosition());
+                sideline.RemoveUnitFromSideline(mwm.gameObject);
+                occupied = true;
             }
             else
             {

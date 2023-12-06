@@ -25,8 +25,8 @@ public class Sideline : MonoBehaviour
 
     private void Update()
     {
-      transform.position = pos;
-      transform.rotation = rot;
+        transform.position = pos;
+        transform.rotation = rot;
     }
 
     public List<GameObject> Sidelines() => sidelines;
@@ -46,9 +46,9 @@ public class Sideline : MonoBehaviour
         }
     }
 
-    public void InstanciateUnit(GameObject unit, StatRandomizer statRan)
+    public void InstanciateUnit(GameObject Unit, StatRandomizer statRan)
     {
-        Instantiate(unit);
+        GameObject unit = Instantiate(Unit);
         unit.gameObject.transform.position = spawnpoints[sidelines.Count].transform.position;
         unit.GetComponent<Unit>().SetInactive();
         unit.GetComponent<Stats>().SetStats(statRan.GetMaxHealth(), statRan.GetMaxMana(), statRan.GetManaRegen(), statRan.GetAttack(), statRan.GetAttackSpeed(), statRan.GetAttackDistance(), statRan.GetDefence());
@@ -66,22 +66,18 @@ public class Sideline : MonoBehaviour
         sidelines.Remove(unit);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public bool PlaceUnitOnBench(GameObject go)
     {
-        if (collision.gameObject.GetComponent<MoveWithMouse>())
+        if (SpaceOnBench())
         {
-            MoveWithMouse mwm = collision.gameObject.GetComponent<MoveWithMouse>();
-
-            if (SpaceOnBench())
-            {
-                mwm.GetComponent<Unit>().PlaceUnitOnSideLine();
-                gameObject.transform.position = spawnpoints[sidelines.Count].transform.position;
-                sidelines.Add(collision.gameObject);
-            }
-            else
-            {
-                mwm.PlaceBack();
-            }
+            go.GetComponent<Unit>().PlaceUnitOnSideLine();
+            go.gameObject.transform.position = spawnpoints[sidelines.Count].transform.position;
+            sidelines.Add(go.gameObject);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

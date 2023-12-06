@@ -91,10 +91,10 @@ public abstract class Unit : MonoBehaviour
     {
         startPosition = pos;
         gameObject.transform.position = startPosition;
-        FindObjectOfType<PlayerHuman>().AddToActiveUnits(gameObject);
+        if (!GameInfo.Info.GetHumanActiveCharacterList().Contains(gameObject))
+            FindObjectOfType<PlayerHuman>().AddToActiveUnits(gameObject);
         active = true;
         SetAlive();
-
     }
 
     public void PlaceUnitOnSideLine()

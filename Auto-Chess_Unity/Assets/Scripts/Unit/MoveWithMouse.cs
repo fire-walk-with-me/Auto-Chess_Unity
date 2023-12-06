@@ -19,22 +19,22 @@ public class MoveWithMouse : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        if (FindObjectOfType<RoundManager>().ActiveRound() || gameObject.tag == "Competitor") return;
+        if (GameInfo.Info.GetIsRoundActive() || gameObject.tag == "Competitor") return;
 
         oldObjectPos = transform.position;
     }
 
     private void OnMouseDrag()
     {
-        if (FindObjectOfType<RoundManager>().ActiveRound() || gameObject.tag == "Competitor") return;
+        if (GameInfo.Info.GetIsRoundActive() || gameObject.tag == "Competitor") return;
 
-        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 32f);
+        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 39f);
 
         transform.position = cam.ScreenToWorldPoint(mousePos);
     }
     private void OnMouseUp()
     {
-        if (gameObject.tag == "Competitor") return;
+        if (GameInfo.Info.GetIsRoundActive() || gameObject.tag == "Competitor") return;
 
         checkCollision = true;
         StartCoroutine(CheckCollisionWithPlacementNode());

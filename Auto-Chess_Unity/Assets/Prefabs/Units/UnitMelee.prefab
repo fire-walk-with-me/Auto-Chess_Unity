@@ -211,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 7212001639144885559}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9900007, y: 5.03, z: 39.83}
+  m_LocalPosition: {x: 28.05, y: 5.03, z: 39.83}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -347,13 +347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97339510fecad2b4e82e34b96fb070ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 29
-  maxMana: 13
+  maxHealth: 28
+  maxMana: 12
   manaRegen: 3
-  attack: 5
+  attack: 7
   attackSpeed: 3
   attackDistance: 1
-  defence: 2
+  defence: 1
 --- !u!114 &627861626217493874
 MonoBehaviour:
   m_ObjectHideFlags: 0

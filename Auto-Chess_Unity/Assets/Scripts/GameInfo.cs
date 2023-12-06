@@ -15,9 +15,11 @@ public class GameInfo : MonoBehaviour
     public static GameInfo Info { get; private set; }
 
     [SerializeField] RoundManager roundManager;
+    [SerializeField] UIManager uiManager;
     [SerializeField] PlayerHuman human;
     [SerializeField] PlayerAI ai;
     [SerializeField] Sideline sideline;
+    
 
     private void Awake()
     {
@@ -45,5 +47,6 @@ public class GameInfo : MonoBehaviour
     public Sideline GetSideline() => sideline;
     public bool GetIfSpaceOnSideline() => sideline.SpaceOnBench();
     public List<GameObject> GetCharactersOnSideline() => sideline.Sidelines();
+    public UIManager GetUIManager() => uiManager;
 
 }
