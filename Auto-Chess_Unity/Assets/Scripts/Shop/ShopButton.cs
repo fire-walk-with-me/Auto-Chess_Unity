@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
@@ -13,6 +14,10 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     UnitShop unitShop;
     bool sold;
     StatRandomizer statRan;
+
+    [SerializeField] Sprite meleeSprite;
+    [SerializeField] Sprite rangeSprite;
+    [SerializeField] Sprite emptySprite;
 
     private void Start()
     {
@@ -37,7 +42,8 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
         if (unitShop.BuyUnit(unit, 2, statRan))
         {
-            gameObject.GetComponentInChildren<TMP_Text>().text = "SOLD";
+            //gameObject.GetComponentInChildren<TMP_Text>().text = "";
+            gameObject.GetComponent<Image>().sprite = emptySprite;
             sold = true;
         }
     }
@@ -56,5 +62,17 @@ public class ShopButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public GameObject GetUnitOnButton()
     {
         return unit;
+    }
+
+    public void UpdatePortrateOnButton()
+    {
+        if (unit.gameObject.GetComponent<Range>())
+        {
+            gameObject.GetComponent<Image>().sprite = rangeSprite;
+        }
+        else if (unit.gameObject.GetComponent<Melee>())
+        {
+            gameObject.GetComponent<Image>().sprite = meleeSprite;
+        }
     }
 }

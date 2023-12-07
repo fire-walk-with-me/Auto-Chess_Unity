@@ -43,13 +43,12 @@ public class UIManager : MonoBehaviour
 
     public void UpdateUnitShop(List<GameObject> NewUnitsToDisplay)
     {
-        //unitsInStoreList.Clear();
         unitsInStoreList = NewUnitsToDisplay;
 
         for (int i = 0; i < buttonList.Count; ++i)
         {
-            buttonList[i].GetComponentInChildren<TMP_Text>().text = unitsInStoreList[i].GetComponent<Unit>().UnitName();
             buttonList[i].gameObject.GetComponent<ShopButton>().UpdateUnitOnButton(unitsInStoreList[i]);
+            buttonList[i].gameObject.GetComponent<ShopButton>().UpdatePortrateOnButton();
             buttonList[i].gameObject.GetComponent<ShopButton>().SetSold(false);
             buttonList[i].gameObject.GetComponent<StatRandomizer>().RandomizeStats();
         }
