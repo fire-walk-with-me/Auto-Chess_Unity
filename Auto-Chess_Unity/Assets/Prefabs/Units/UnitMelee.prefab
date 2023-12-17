@@ -26,7 +26,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159799726735205649}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 6.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7288, y: 108}
+  m_AnchoredPosition: {x: -0.1, y: 0.7}
   m_SizeDelta: {x: 325.02, y: 29.597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7584515563152397740
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 404936513461009177}
   m_Layer: 0
   m_Name: UnitMelee
-  m_TagString: Player
+  m_TagString: Competitor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +484,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9174741720153717549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.91}
   m_LocalScale: {x: 0.01, y: 0.02, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -493,8 +493,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.745}
-  m_SizeDelta: {x: 332.4775, y: 74.2708}
+  m_AnchoredPosition: {x: 0, y: 2.0836}
+  m_SizeDelta: {x: 332.4775, y: 40.4084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1530777549529974027
 Canvas:

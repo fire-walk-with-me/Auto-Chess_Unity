@@ -101,6 +101,7 @@ public abstract class Unit : MonoBehaviour
     {
         active = false;
         FindAnyObjectByType<PlayerHuman>().RemoveFromActiveUnits(gameObject);
+        gameObject.GetComponentInChildren<Canvas>().enabled = false;
 
     }
     public void SetDead()

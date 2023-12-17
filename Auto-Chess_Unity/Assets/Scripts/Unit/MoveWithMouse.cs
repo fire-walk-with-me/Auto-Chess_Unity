@@ -28,7 +28,7 @@ public class MoveWithMouse : MonoBehaviour
     {
         if (GameInfo.Info.GetIsRoundActive() || gameObject.tag == "Competitor") return;
 
-        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 39f);
+        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 7f);
 
         transform.position = cam.ScreenToWorldPoint(mousePos);
     }
@@ -42,7 +42,7 @@ public class MoveWithMouse : MonoBehaviour
 
     private IEnumerator CheckCollisionWithPlacementNode()
     {
-        gameObject.transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
+        gameObject.transform.position = new Vector3(transform.position.x, 1.5f, transform.position.z);
 
         yield return new WaitForSeconds(0.2f);
 

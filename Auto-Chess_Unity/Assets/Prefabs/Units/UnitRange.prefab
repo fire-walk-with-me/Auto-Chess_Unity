@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2794199049335324941}
   m_Layer: 0
   m_Name: UnitRange
-  m_TagString: Player
+  m_TagString: Competitor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,8 +303,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9006762839150825212}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.594}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -502,8 +502,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.7288, y: 19.3}
-  m_SizeDelta: {x: 325.02, y: 50}
+  m_AnchoredPosition: {x: 3.7288, y: 15.09}
+  m_SizeDelta: {x: 325.02, y: 59.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8318057452428401413
 MonoBehaviour:

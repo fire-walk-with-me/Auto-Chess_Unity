@@ -53,11 +53,13 @@ public class Sideline : MonoBehaviour
         unit.GetComponent<Unit>().SetInactive();
         unit.GetComponent<Stats>().SetStats(statRan.GetMaxHealth(), statRan.GetMaxMana(), statRan.GetManaRegen(), statRan.GetAttack(), statRan.GetAttackSpeed(), statRan.GetAttackDistance(), statRan.GetDefence());
         sidelines.Add(unit);
+        unit.gameObject.GetComponentInChildren<Canvas>().enabled = false;
     }
 
     public void PutUnitOnBench(GameObject unit)
     {
         sidelines.Add(unit);
+        unit.gameObject.GetComponentInChildren<Canvas>().enabled = false;
     }
 
     public void RemoveUnitFromSideline(GameObject unit)
