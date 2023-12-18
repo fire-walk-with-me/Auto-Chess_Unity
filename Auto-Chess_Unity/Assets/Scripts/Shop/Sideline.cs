@@ -9,6 +9,7 @@ public class Sideline : MonoBehaviour
 {
     [SerializeField] List<GameObject> sidelines = new List<GameObject>();
     [SerializeField] List<GameObject> spawnpoints = new List<GameObject>();
+    [SerializeField] List<ParticleSystem> particleSystems = new List<ParticleSystem>();
     PlayerHuman player;
     UIManager uiManager;
     const int maxSidelineSize = 6;
@@ -52,6 +53,7 @@ public class Sideline : MonoBehaviour
         unit.gameObject.transform.position = spawnpoints[sidelines.Count].transform.position;
         unit.GetComponent<Unit>().SetInactive();
         unit.GetComponent<Stats>().SetStats(statRan.GetMaxHealth(), statRan.GetMaxMana(), statRan.GetManaRegen(), statRan.GetAttack(), statRan.GetAttackSpeed(), statRan.GetAttackDistance(), statRan.GetDefence());
+        spawnpoints[sidelines.Count].gameObject.GetComponentInChildren<ParticleSystem>().Play();
         sidelines.Add(unit);
         unit.gameObject.GetComponentInChildren<Canvas>().enabled = false;
     }

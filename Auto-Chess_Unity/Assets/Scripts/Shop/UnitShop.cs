@@ -9,6 +9,7 @@ public class UnitShop : MonoBehaviour
     List<GameObject> unitsInShop = new List<GameObject>();
     [SerializeField] UnitPool pool;
     [SerializeField] Sideline sideline;
+    [SerializeField] AudioSource audioSource;
 
     public void UpdateShop()
     {
@@ -32,6 +33,7 @@ public class UnitShop : MonoBehaviour
             ph.DecreaceGold(unitCost);
             shopUI.UpdateCurrencyText();
             sideline.InstanciateUnit(unit, statRan);
+            audioSource.Play();
             return true;
         }
         return false;

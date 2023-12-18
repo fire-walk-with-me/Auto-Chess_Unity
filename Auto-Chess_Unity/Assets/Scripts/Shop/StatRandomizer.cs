@@ -27,9 +27,9 @@ public class StatRandomizer : MonoBehaviour
             maxHealth = Random.Range(20, 31);
             maxMana = Random.Range(10, 16);
             manaRegen = Random.Range(2, 8);
-            attack = Random.Range(5, 8);
+            attack = Random.Range(5, 9);
             attackSpeed = Random.Range(2, 5);
-            attackDistance = Random.Range(1, 2);
+            attackDistance = 3;
             defence = Random.Range(1, 4);
         }
         else if (shopButton.GetUnitOnButton().gameObject.GetComponent<Range>())//Range
@@ -37,7 +37,7 @@ public class StatRandomizer : MonoBehaviour
             maxHealth = Random.Range(15, 21);
             maxMana = Random.Range(10, 16);
             manaRegen = Random.Range(2, 8);
-            attack = Random.Range(4, 7);
+            attack = Random.Range(6, 10);
             attackSpeed = Random.Range(3, 6);
             attackDistance = Random.Range(8, 14);
             defence = Random.Range(1, 3);

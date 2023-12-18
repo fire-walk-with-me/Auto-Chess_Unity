@@ -51,7 +51,7 @@ public class Stats : MonoBehaviour
             manaRegen = Random.Range(2, 8);
             attack = Random.Range(5, 8);
             attackSpeed = Random.Range(2, 5);
-            attackDistance = Random.Range(1, 1.5f);
+            attackDistance = 3;
             defence = Random.Range(1, 4);
         }
         else if (gameObject.GetComponent<Range>())//Range

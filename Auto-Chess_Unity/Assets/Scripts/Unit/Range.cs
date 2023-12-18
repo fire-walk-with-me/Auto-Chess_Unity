@@ -8,4 +8,27 @@ using UnityEngine.UIElements.Experimental;
 
 public class Range : Unit
 {
+    [SerializeField] GameObject arrow;
+    Vector3 heading;
+    Vector3 direction;
+    float distanceToTarget;
+
+    public void ShootArrow()
+    {
+        if (GameInfo.Info.GetIsRoundActive())
+        {
+            projectile p = Instantiate(arrow, transform.position, CalculateDirection()).GetComponent<projectile>();
+            p.SetTarget(GetTarget());
+        }
+    }
+
+    private Quaternion CalculateDirection()
+    {
+        if (!GetTarget()) return Quaternion.LookRotation(direction);
+
+        heading = GetTarget().transform.position - transform.position;
+        distanceToTarget = heading.magnitude;
+        direction = heading / distanceToTarget;
+        return Quaternion.LookRotation(direction);
+    }
 }

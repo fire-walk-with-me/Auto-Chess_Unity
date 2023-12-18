@@ -10,7 +10,7 @@ public class Attack : AIBehaviour
 {
     [SerializeField] float attackSpeed;
     [SerializeField] float attackDamage;
-    float attackTime = 10;
+    float attackTime = 6;
     float timer;
 
     Vector3 heading;
@@ -44,6 +44,10 @@ public class Attack : AIBehaviour
         if (enemy.IsDead()) thisUnit.RemoveTarget();
         CalculateDirection();
         enemy.TakeDamage(attackDamage);
+        if (gameObject.GetComponent<Range>())
+        {
+            gameObject.GetComponent<Range>().ShootArrow();
+        }
     }
     private void CalculateDirection()
     {
