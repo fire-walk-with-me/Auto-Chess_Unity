@@ -1,6 +1,7 @@
 # Auto-Chess_Unity
 Unity edtior verison 2022.3.10f1 LTS
 Malmö Universitet, Spelutvecklings programmet, 2023
+
 Developed by Gustaf Larsson, gustaf.hd.larsson@gmail.com
 
 This is a game created for educational purposes with a focus on artificial intelligence for games. 
