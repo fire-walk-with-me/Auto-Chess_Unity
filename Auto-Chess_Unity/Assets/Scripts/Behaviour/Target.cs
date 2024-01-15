@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//this script will find the closest active enemy to the unit who uses this behaviour, and set it as a target
+//This script will find the closest active enemy to the unit who uses this behaviour, and set it as a target
+//The script determins if a unit is a potentiall enemy by checking if itself belongs to the player or the AI-competitor.
+//It does so by checking its own tag. The tag is set by the unitPool-script.
 
 public class Target : AIBehaviour
 {

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+//This is the abstract class of units.
+//Remember not to add this component if you create your own unit,
+//but a subclass of it like range or melee, or create a new subclass.
+
 public abstract class Unit : MonoBehaviour
 {
     [SerializeField] private string unitName;
