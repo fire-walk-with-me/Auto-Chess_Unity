@@ -1,5 +1,5 @@
 # Auto-Chess_Unity
-Unity edtior verison 2022.3.10f1 LTS
+Unity edtior verison 2022.3.10f1 LTS <br>
 Malmö Universitet, Spelutvecklings programmet, 2023
 
 Developed by Gustaf Larsson, gustaf.hd.larsson@gmail.com
@@ -15,7 +15,7 @@ You should now be able to open the project from the unity-hub. Just make sure yo
 
 
 **HOW TO PLAY**: <br>
-The game is as named a "auto-chess", meaning a game where the pieces are autonomous and fight the battle on their own.
+The game is as named an "auto-chess", meaning a game where the pieces are autonomous and fight the battle on their own.
 Your job is to buy units and place them strategically to give your team the upper hand against your AI-competitor. 
 Use the cursor to click units in the shop UI to buy them, as long as you have enough currency the unit you buy will appear on your side-line where they are inactive. 
 To activate a unit, drag and drop it to one of the empty placements-nodes on the map. The AI-competitor will spawn its own units and the round will start. After the round is over the board is reset and there is a planing phase before the game-loop starts over. There is no end. 
